@@ -6,7 +6,6 @@ const config: Config = {
 		'./components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
-
 	theme: {
 		container: {
 			center: true,
@@ -23,21 +22,23 @@ const config: Config = {
 				desktop: '1440px',
 			},
 			colors: {
-				white: '#fff',
-				black: '#232233',
-				blue: '#5956E9',
-				gray: '#6C6C72',
-			},
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-conic':
-					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				white: {
+					DEFAULT: '#fff',
+				},
+				black: {
+					DEFAULT: '#232233',
+				},
+				blue: {
+					DEFAULT: '#5956E9',
+				},
+				gray: {
+					DEFAULT: '#6C6C72',
+				},
 			},
 			boxShadow: {
 				'box-shadow': '0px 1px 10px 0px rgba(0, 0, 0, 0.10)',
 			},
 		},
-
 		fontSize: {
 			sm: [
 				'.8rem',

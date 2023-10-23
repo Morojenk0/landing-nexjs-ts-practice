@@ -17,7 +17,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 			className="bg-black"
 		>
 			<body className={`${josefinSans.className} `}>
-				<Navigation />
+				<header>
+					<Navigation />
+				</header>
 				{children}
 			</body>
 		</html>
