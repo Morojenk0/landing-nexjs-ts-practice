@@ -15,6 +15,7 @@ export default function Navigation() {
 		// ? fix leading?
 		// ? fix breakpoints?
 		// ! leading fix https://tailwindcss.com/docs/font-size
+
 		<nav>
 			<div className="container">
 				<div className="hidden lg:flex justify-between">
