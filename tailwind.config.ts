@@ -6,6 +6,7 @@ const config: Config = {
 		'./components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
+
 	theme: {
 		container: {
 			center: true,
@@ -16,7 +17,7 @@ const config: Config = {
 			},
 		},
 		extend: {
-			theme: {
+			screens: {
 				mobile: '375px',
 				tablet: '768px',
 				desktop: '1440px',
@@ -32,7 +33,11 @@ const config: Config = {
 				'gradient-conic':
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
+			boxShadow: {
+				'box-shadow': '0px 1px 10px 0px rgba(0, 0, 0, 0.10)',
+			},
 		},
+
 		fontSize: {
 			sm: [
 				'.8rem',

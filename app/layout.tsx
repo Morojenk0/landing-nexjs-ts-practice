@@ -1,6 +1,7 @@
 import type {Metadata} from 'next'
 import {Josefin_Sans} from 'next/font/google'
 import './globals.css'
+import Navigation from './components/Navigation.jsx'
 
 const josefinSans = Josefin_Sans({subsets: ['latin']})
 
@@ -11,8 +12,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
 	return (
-		<html lang="en">
-			<body className={josefinSans.className}>{children}</body>
+		<html
+			lang="en"
+			className="bg-black"
+		>
+			<body className={`${josefinSans.className} `}>
+				<Navigation />
+				{children}
+			</body>
 		</html>
 	)
 }
