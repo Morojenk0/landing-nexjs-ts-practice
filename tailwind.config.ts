@@ -16,6 +16,9 @@ const config: Config = {
 			},
 		},
 		extend: {
+			backgroundImage: {
+				'hero-image': "url('../public/hero.png')",
+			},
 			screens: {
 				mobile: '375px',
 				tablet: '768px',
@@ -37,6 +40,15 @@ const config: Config = {
 			},
 			boxShadow: {
 				'box-shadow': '0px 1px 10px 0px rgba(0, 0, 0, 0.10)',
+			},
+			keyFrames: {
+				curtain: {
+					'0%': {width: '0', height: '0'},
+					'100%': {width: '100vw', height: '100vw'},
+				},
+			},
+			animation: {
+				curtain: 'curtain 1s ease-in-out',
 			},
 		},
 		fontSize: {
