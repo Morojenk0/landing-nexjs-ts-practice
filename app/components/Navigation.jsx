@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import menuClose from '../../public/icons/menu-close.svg'
 import facebook from '../../public/icons/facebook-fill.svg'
 import instagram from '../../public/icons/instagram-fill.svg'
 import twitter from '../../public/icons/twitter-fill.svg'
@@ -10,78 +11,82 @@ import youtube from '../../public/icons/youtube-fill.svg'
 import logo from '../../public/icons/logo.svg'
 import menu from '../../public/icons/menu-line.svg'
 
-const hamburgerToggle = () => {
-	const hamburher = document.getElementById('hamburgerMenu')
+const toggleMenu = () => {
+	const menu = document.getElementById('hamburgerMenu')
 
-	hamburher.classList.toggle('hidden')
-	hamburher.classList.toggle('flex')
+	menu.classList.toggle('w-full')
 }
 
 export default function Navigation() {
 	return (
 		<nav>
-			<ul
-				className="animate-curtain hidden absolute z-10 w-screen h-screen flex-col items-center justify-center bg-white"
+			<div
+				className="fixed w-0 h-full z-[9999] overflow-hidden duration-700 bg-[#000]/80"
 				id="hamburgerMenu"
 			>
-				<li className="">
-					<Link
-						className="py-[.65rem] box-content block w-screen text-center text-black text-xl uppercase"
-						href="/"
-					>
-						home
-					</Link>
-				</li>
-				<li className="">
-					<Link
-						className="py-[.65rem] box-content block w-screen text-center text-black text-xl uppercase"
-						href="/about"
-					>
-						About
-					</Link>
-				</li>
-				<li className="">
-					<Link
-						className="py-[.65rem] box-content block w-screen text-center text-black text-xl uppercase"
-						href="/features"
-					>
-						Features
-					</Link>
-				</li>
-				<li className="">
-					<Link
-						className="py-[.65rem] box-content block w-screen text-center text-black text-xl uppercase"
-						href="/screenshot"
-					>
-						Screenshot
-					</Link>
-				</li>
-				<li className="">
-					<Link
-						className="py-[.65rem] box-content block w-screen text-center text-black text-xl uppercase"
-						href="/blog"
-					>
-						blog
-					</Link>
-				</li>
-			</ul>
+				<div>
+					<Image
+						className="absolute top-[3rem] right-[3rem] z-[9999] box-content -m-2 p-2 cursor-pointer transition hover:scale-125"
+						src={menuClose}
+						alt="closeMenu"
+						onClick={() => {
+							toggleMenu()
+						}}
+					/>
+				</div>
+				<ul
+					className="absolute w-[100%] top-[25%]"
+					onClick={() => {
+						toggleMenu()
+					}}
+				>
+					<li>
+						<Link
+							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-500 transition"
+							href="/"
+						>
+							home
+						</Link>
+					</li>
+					<li>
+						<Link
+							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-500 transition"
+							href="/about"
+						>
+							About
+						</Link>
+					</li>
+					<li>
+						<Link
+							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-500 transition"
+							href="/features"
+						>
+							Features
+						</Link>
+					</li>
+					<li>
+						<Link
+							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-500 transition"
+							href="/screenshot"
+						>
+							Screenshot
+						</Link>
+					</li>
+					<li>
+						<Link
+							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-500 transition"
+							href="/blog"
+						>
+							blog
+						</Link>
+					</li>
+				</ul>
+			</div>
 			<div
 				className="container pt-[2.5rem] 
 				tablet:pt-[1.55rem] 
 				desktop:pt-[2.2rem]"
 			>
-				<div
-					className="m-[.55rem] absolute z-10 
-					tablet:hidden"
-				>
-					<Image
-						src={menu}
-						alt="menu"
-						onClick={() => {
-							hamburgerToggle()
-						}}
-					/>
-				</div>
 				<div
 					className="hidden justify-between 
 					tablet:flex 
@@ -92,7 +97,7 @@ export default function Navigation() {
 							<p>
 								<a
 									className="relative pl-[2.3rem] text-white text-base not-italic 
-									before:content-[url('../public/icons/mail-fill.svg')] before:absolute before:inset-y-0 before:left-0 
+									before:content-[url('../public/icons/mail-fill.svg')] before:absolute before:inset-y-0 before:left-0 before:w-[1.125rem] before:h-[1.125rem] before:hover:scale-125 before:transition 
 									hover:underline"
 									href="mailto:Info@youremail.com"
 								>
@@ -103,7 +108,7 @@ export default function Navigation() {
 							<p>
 								<a
 									className="relative pl-[2.3rem] text-white text-base not-italic 
-									before:content-[url('../public/icons/phone-fill.svg')] before:absolute before:inset-y-0 before:left-0 
+									before:content-[url('../public/icons/phone-fill.svg')] before:absolute before:inset-y-0 before:left-0 before:w-[1.125rem] before:h-[1.125rem] before:hover:scale-125 before:transition
 									hover:underline"
 									href="tel:+4805550103"
 								>
@@ -120,7 +125,7 @@ export default function Navigation() {
 									target="_blank"
 								>
 									<Image
-										className="transition hover:scale-125"
+										className="box-content -m-2 p-2 transition hover:scale-125"
 										src={facebook}
 										alt="facebook"
 									/>
@@ -132,7 +137,7 @@ export default function Navigation() {
 									target="_blank"
 								>
 									<Image
-										className="transition hover:scale-125"
+										className="box-content -m-2 p-2 transition hover:scale-125"
 										src={instagram}
 										alt="instagram"
 									/>
@@ -144,7 +149,7 @@ export default function Navigation() {
 									target="_blank"
 								>
 									<Image
-										className="transition hover:scale-125"
+										className="box-content -m-2 p-2 transition hover:scale-125"
 										src={twitter}
 										alt="twitter"
 									/>
@@ -156,7 +161,7 @@ export default function Navigation() {
 									target="_blank"
 								>
 									<Image
-										className="transition hover:scale-125"
+										className="box-content -m-2 p-2 transition hover:scale-125"
 										src={youtube}
 										alt="youtube"
 									/>
@@ -175,7 +180,7 @@ export default function Navigation() {
 							<Link
 								className="text-black uppercase underline-offset-[3px] hover:text-blue hover:underline 
 								tablet:text-sm 
-								lg:text-xl "
+								lg:text-xl"
 								href="/"
 							>
 								home
@@ -210,7 +215,8 @@ export default function Navigation() {
 					>
 						<Link href="/">
 							<Image
-								className="tablet:w-[10.4375rem] tablet:lg:h-[1.5rem] 
+								className="box-content -m-2 p-2
+								tablet:w-[10.4375rem] tablet:lg:h-[1.5rem] 
 								lg:w-[10.4375rem] lg:h-[1.75rem]"
 								src={logo}
 								alt="logo"
@@ -220,8 +226,7 @@ export default function Navigation() {
 					<ul
 						className="hidden items-center 
 						tablet:flex tablet:gap-x-[.7rem] 
-						xl:gap-x-[2.5rem]
-						"
+						xl:gap-x-[2.5rem]"
 					>
 						<li>
 							<Link
@@ -260,8 +265,12 @@ export default function Navigation() {
 						tablet:hidden"
 					>
 						<Image
+							className="box-content -m-2 p-2 cursor-pointer"
 							src={menu}
 							alt="menu"
+							onClick={() => {
+								toggleMenu()
+							}}
 						/>
 					</div>
 					<a

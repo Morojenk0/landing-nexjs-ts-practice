@@ -1,7 +1,7 @@
 import type {Metadata} from 'next'
 import {Josefin_Sans} from 'next/font/google'
 import './globals.css'
-import Navigation from './components/Navigation.jsx'
+import Navigation from './components/Navigation'
 
 const josefinSans = Josefin_Sans({subsets: ['latin']})
 
@@ -17,7 +17,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 			className="bg-black"
 		>
 			<body className={`${josefinSans.className}`}>
-				<header className="bg-hero-image bg-cover bg-center bg-no-repeat">
+				<header className="bg-hero-image bg-cover bg-center bg-no-repeat h-screen">
 					<Navigation />
 				</header>
 				{children}
