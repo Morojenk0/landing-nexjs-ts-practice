@@ -26,7 +26,7 @@ export default function Navigation() {
 			>
 				<div>
 					<Image
-						className="absolute top-[3rem] right-[3rem] z-[9999] box-content -m-2 p-2 cursor-pointer transition hover:scale-125"
+						className="absolute top-[3rem] right-[3rem] z-[9999] cursor-pointer transition hover:scale-125"
 						src={menuClose}
 						alt="closeMenu"
 						onClick={() => {
@@ -34,15 +34,10 @@ export default function Navigation() {
 						}}
 					/>
 				</div>
-				<ul
-					className="absolute w-[100%] top-[25%]"
-					onClick={() => {
-						toggleMenu()
-					}}
-				>
+				<ul className="absolute w-[100%] top-[25%]">
 					<li>
 						<Link
-							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-500 transition"
+							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-300 transition"
 							href="/"
 						>
 							home
@@ -50,7 +45,7 @@ export default function Navigation() {
 					</li>
 					<li>
 						<Link
-							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-500 transition"
+							className="py-[.65rem] box-content block text-center  text-gray text-xl uppercase hover:text-white duration-500 transition"
 							href="/about"
 						>
 							About
@@ -265,7 +260,7 @@ export default function Navigation() {
 						tablet:hidden"
 					>
 						<Image
-							className="box-content -m-2 p-2 cursor-pointer"
+							className="cursor-pointer"
 							src={menu}
 							alt="menu"
 							onClick={() => {
