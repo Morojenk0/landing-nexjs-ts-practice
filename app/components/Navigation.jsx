@@ -186,8 +186,8 @@ export default function Navigation() {
 							<Link
 								className="text-black uppercase underline-offset-[3px] hover:text-blue hover:underline 
 								tablet:text-sm 
-								lg:text-xl "
-								href="#"
+								lg:text-xl"
+								href="/about"
 							>
 								About
 							</Link>
@@ -196,8 +196,8 @@ export default function Navigation() {
 							<Link
 								className="text-black uppercase underline-offset-[3px] hover:text-blue hover:underline 
 								tablet:text-sm 
-								lg:text-xl "
-								href="#"
+								lg:text-xl"
+								href="/features"
 							>
 								Features
 							</Link>
@@ -228,7 +228,7 @@ export default function Navigation() {
 								className="text-black uppercase underline-offset-[3px] hover:text-blue hover:underline 
 								tablet:text-sm 
 								lg:text-xl "
-								href="#"
+								href="/screenshot"
 							>
 								Screenshot
 							</Link>
