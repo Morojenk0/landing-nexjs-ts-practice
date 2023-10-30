@@ -1,4 +1,4 @@
-import type {Config} from 'tailwindcss'
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
 	content: [
@@ -18,6 +18,7 @@ const config: Config = {
 		extend: {
 			backgroundImage: {
 				'hero-image': "url('../public/hero.png')",
+				'border-mobile': "url('../public/shapes/border-mobile.svg')",
 			},
 			screens: {
 				mobile: '375px',
@@ -43,8 +44,8 @@ const config: Config = {
 			},
 			keyFrames: {
 				curtain: {
-					'0%': {width: '0', height: '0'},
-					'100%': {width: '100vw', height: '100vw'},
+					'0%': { width: '0', height: '0' },
+					'100%': { width: '100vw', height: '100vw' },
 				},
 			},
 			animation: {
