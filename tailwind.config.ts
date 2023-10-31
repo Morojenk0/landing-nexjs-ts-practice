@@ -18,7 +18,6 @@ const config: Config = {
 		extend: {
 			backgroundImage: {
 				'hero-image': "url('../public/hero.png')",
-				'border-mobile': "url('../public/shapes/border-mobile.svg')",
 			},
 			screens: {
 				mobile: '375px',
