@@ -256,11 +256,11 @@ export default function Navigation() {
 						</li>
 					</ul>
 					<div
-						className="ml-[.55rem] 
+						className="ml-[.55rem]
 						tablet:hidden"
 					>
 						<Image
-							className="cursor-pointer"
+							className="box-content -m-2 p-2 cursor-pointer"
 							src={menu}
 							alt="menu"
 							onClick={() => {

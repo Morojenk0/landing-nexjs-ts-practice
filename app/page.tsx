@@ -17,10 +17,11 @@ export default function Home() {
 					>
 						<article className="relative z-20">
 							<div
-								className=" after:content-[url('../public/shapes/border-mobile.svg')] after:absolute after:left-[1.25rem] after:top-0 after:bottom-0 after:-z-10 after:my-auto after:w-[20.1875rem] after:h-[22.375rem]
-								 max-w-[20.2rem] pt-[1.9rem] pr-[.75rem] pb-[1.4rem] pl-[1.13rem] flex flex-col bg-white
-							tablet:max-w-[22.25rem] tablet:pt-[.9rem] tablet:pr-[.44rem] tablet:pb-[.9rem] tablet:pl-[1.12rem]
-							lg:max-w-[35.625rem] lg:pt-[2.5rem] lg:pr-[1.44rem] lg:pb-[2.6rem] lg:pl-[1.9rem]"
+								className="after:content-[url('../public/shapes/border-mobile.svg')] after:absolute after:left-[1.25rem] after:top-0 after:bottom-0 after:-z-10 after:my-auto after:w-[20.1875rem] after:h-[22.375rem]
+								max-w-[20.2rem] pt-[1.7rem] pr-[.75rem] pb-[1.2rem] pl-[1.13rem] flex flex-col bg-white
+								tablet:max-w-[22.25rem] tablet:pt-[.9rem] tablet:pr-[.44rem] tablet:pb-[.9rem] tablet:pl-[1.12rem] tablet:after:content-[url('../public/shapes/border-tablet.svg')] tablet:after:left-[1rem] tablet:after:w-[23.4375rem] tablet:after:h-[23.8125rem]
+								lg:max-w-[35.625rem] lg:pt-[2.5rem] lg:pr-[1.44rem] lg:pb-[2.6rem] lg:pl-[1.9rem]
+								desktop:after:content-[url('../public/shapes/border-desktop.svg')] desktop:after:left-[3.12rem] desktop:after:w-[35.625rem] desktop:after:h-[33.4375rem]"
 							>
 								<h1
 									className="text-blue text-2xl uppercase
@@ -30,7 +31,7 @@ export default function Home() {
 									A Great App Makes Your Life Better
 								</h1>
 								<p
-									className=" mt-[1.1rem] text-gray text-base
+									className="mt-[1.1rem] text-gray text-base
 								tablet:mt-[.40rem]
 								lg:max-w-[30.4375rem] lg:mt-[1.12rem]"
 								>
@@ -88,13 +89,18 @@ export default function Home() {
 							</div>
 						</article>
 						<section>
-							<div>
+							<div
+								className="mt-[4.20rem]
+								tablet:mt-[0] tablet:ml-[6rem]
+								xl:ml-[15rem]
+								desktop:ml-[11.75rem]"
+							>
 								<Image
-									className="w-[15.3125rem] h-[31.25rem] mt-[4.20rem]
-									tablet:w-[12.5rem] tablet:h-[25.375rem] tablet:mt-[0] tablet:ml-[6rem]
+									className="w-[15.3125rem] h-[31.25rem]
+									tablet:w-[12.5rem] tablet:h-[25.375rem] 
 									lg:w-[17.125rem] lg:h-[33rem]
-									xl:w-[19.125rem] xl:h-[38rem] xl:ml-[15rem]
-									desktop:w-[21.125rem] desktop:h-[42.625rem] desktop:ml-[11.75rem]"
+									xl:w-[19.125rem] xl:h-[38rem]
+									desktop:w-[21.125rem] desktop:h-[42.625rem]"
 									src={mobileApp}
 									alt="mobile-app"
 								></Image>
