@@ -4,7 +4,7 @@ import googlePlay from '../public/icons/google-play.svg'
 import appStore from '../public/icons/app-store.svg'
 import mobileApp from '../public/free-Ui-view-mobile-app-mockup-1.png'
 import mockup from '../public/android-smartphone-free-mockup.png'
-
+import { v4 as uuidv4 } from 'uuid'
 export default function Home() {
 	return (
 		<div>
@@ -112,7 +112,10 @@ export default function Home() {
 			</header>
 			<main>
 				<div>
-					<section className=" bg-white">
+					<section
+						className="bg-white"
+						id="about"
+					>
 						<div
 							className="container pt-[3.75rem] pb-[5.75rem] 
 							tablet:pt-[7.5rem] tablet:pb-[10.12rem]
@@ -165,80 +168,47 @@ export default function Home() {
 									className="flex flex-col gap-y-[1.25rem]
 								lg:gap-y-[2.5rem]"
 								>
-									<article
-										className="max-w-[21.4375rem] pt-[1.13rem] pr-[2.06rem] pb-[.63rem] pl-[3.8rem] rounded-[.625rem] shadow-box-shadow
-										tablet:max-w-[24.4375rem]
-										lg:max-w-[35.625rem] lg:pt-[1.88rem] lg:pr-[1.25rem] lg:pb-[1.3rem] lg:pl-[3.7rem]"
-									>
-										<h4 className="text-black text-xl uppercase relative before:absolute before:-ml-[2.5rem] before:content-[url('../public/icons/checkbox-circle-fill-black.svg')]">
-											Creative design
-										</h4>
-										<p
-											className="mt-[.19rem] text-gray text-base
-										lg:mt-[.75rem]"
+									{[
+										[
+											'Creative design',
+											'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+											'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit.',
+										],
+										[
+											'easy to use',
+											'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+											'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit.',
+										],
+										[
+											'Best user experince',
+											'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+											'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit.',
+										],
+									].map(([title, text, textLarge]) => (
+										<article
+											className="max-w-[21.4375rem] pt-[1.13rem] pr-[2.06rem] pb-[.63rem] pl-[3.8rem] rounded-[.625rem] shadow-box-shadow
+											tablet:max-w-[24.4375rem]
+											lg:max-w-[35.625rem] lg:pt-[1.88rem] lg:pr-[1.25rem] lg:pb-[1.3rem] lg:pl-[3.7rem]"
+											key={uuidv4()}
 										>
-											<span className="lg:hidden">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-											</span>
-											<span className="hidden lg:block">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-												Viverra nunc ante velit vitae. Est tellus vitae, nullam
-												lobortis enim. Faucibus amet etiam tincidunt rhoncus,
-												ullamcorper velit.
-											</span>
-										</p>
-									</article>
-									<article
-										className="max-w-[21.4375rem] pt-[1.13rem] pr-[2.06rem] pb-[.63rem] pl-[3.8rem] rounded-[.625rem] shadow-box-shadow
-										tablet:max-w-[24.4375rem]
-									lg:max-w-[35.625rem] lg:pt-[1.88rem] lg:pr-[1.25rem] lg:pb-[1.3rem] lg:pl-[3.7rem]"
-									>
-										<h4 className="text-black text-xl uppercase relative before:absolute before:-ml-[2.5rem] before:content-[url('../public/icons/checkbox-circle-fill-black.svg')]">
-											easy to use
-										</h4>
-										<p
-											className="mt-[.19rem] text-gray text-base
-										lg:mt-[.75rem]"
-										>
-											<span className="lg:hidden">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-											</span>
-											<span className="hidden lg:block">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-												Viverra nunc ante velit vitae. Est tellus vitae, nullam
-												lobortis enim. Faucibus amet etiam tincidunt rhoncus,
-												ullamcorper velit.
-											</span>
-										</p>
-									</article>
-									<article
-										className="max-w-[21.4375rem] pt-[1.13rem] pr-[2.06rem] pb-[.63rem] pl-[3.8rem] rounded-[.625rem] shadow-box-shadow
-										tablet:max-w-[24.4375rem]
-									lg:max-w-[35.625rem] lg:pt-[1.88rem] lg:pr-[1.25rem] lg:pb-[1.3rem] lg:pl-[3.7rem]"
-									>
-										<h4 className="text-black text-xl uppercase relative before:absolute before:-ml-[2.5rem] before:content-[url('../public/icons/checkbox-circle-fill-black.svg')]">
-											Best user experince
-										</h4>
-										<p
-											className="mt-[.19rem] text-gray text-base
-										lg:mt-[.75rem]"
-										>
-											<span className="lg:hidden">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-											</span>
-											<span className="hidden lg:block">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-												Viverra nunc ante velit vitae. Est tellus vitae, nullam
-												lobortis enim. Faucibus amet etiam tincidunt rhoncus,
-												ullamcorper velit.
-											</span>
-										</p>
-									</article>
+											<h4 className="text-black text-xl uppercase relative before:absolute before:-ml-[2.5rem] before:content-[url('../public/icons/checkbox-circle-fill-black.svg')]">
+												{title}
+											</h4>
+											<p
+												className="mt-[.19rem] text-gray text-base
+												lg:mt-[.75rem]"
+											>
+												<span className="lg:hidden">{text}</span>
+												<span className="hidden lg:block">{textLarge}</span>
+											</p>
+										</article>
+									))}
 								</div>
 							</div>
 						</div>
 					</section>
-					<section></section>
+					<section id="features"></section>
+					<section id="screenshot"></section>
 				</div>
 			</main>
 		</div>

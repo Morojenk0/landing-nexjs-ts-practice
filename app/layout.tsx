@@ -23,6 +23,7 @@ export default function RootLayout({
 			<body className={`${josefinSans.className}`}>
 				{children}
 				<Footer />
+				{/* rewrite navigation */}
 			</body>
 		</html>
 	)
