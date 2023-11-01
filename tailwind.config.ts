@@ -1,4 +1,4 @@
-import type {Config} from 'tailwindcss'
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
 	content: [
@@ -16,21 +16,39 @@ const config: Config = {
 			},
 		},
 		extend: {
-			theme: {
+			backgroundImage: {
+				'hero-image': "url('../public/hero.png')",
+			},
+			screens: {
 				mobile: '375px',
 				tablet: '768px',
 				desktop: '1440px',
 			},
 			colors: {
-				white: '#fff',
-				black: '#232233',
-				blue: '#5956E9',
-				gray: '#6C6C72',
+				white: {
+					DEFAULT: '#fff',
+				},
+				black: {
+					DEFAULT: '#232233',
+				},
+				blue: {
+					DEFAULT: '#5956E9',
+				},
+				gray: {
+					DEFAULT: '#6C6C72',
+				},
 			},
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-conic':
-					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+			boxShadow: {
+				'box-shadow': '0px 1px 10px 0px rgba(0, 0, 0, 0.10)',
+			},
+			keyFrames: {
+				curtain: {
+					'0%': { width: '0', height: '0' },
+					'100%': { width: '100vw', height: '100vw' },
+				},
+			},
+			animation: {
+				curtain: 'curtain 1s ease-in-out',
 			},
 		},
 		fontSize: {
