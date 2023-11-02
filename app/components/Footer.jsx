@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import logo from '../../public/icons/logo.svg'
 import { v4 as uuidv4 } from 'uuid'
 
 export default function Footer() {
@@ -14,7 +13,7 @@ export default function Footer() {
 						<article
 							className="max-w-[20.875rem] mt-[.06rem]
 						tablet:max-w-[13.3125rem] tablet:mt-[.44rem]
-						desktop:max-w-[20.875rem] default:mt-[.06rem]"
+						desktop:max-w-[20.875rem] desktop:mt-[.06rem]"
 						>
 							<h2 className="text-white text-[1.95313rem]/[2.95313rem] font-bold uppercase">
 								logo
@@ -184,6 +183,7 @@ export default function Footer() {
 							<h2 className="text-white text-2xl uppercase">quick link</h2>
 						</li>
 						{[
+							['home', '/'],
 							['about', '#about'],
 							['features', '#features'],
 							['screenshot', '#screenshot'],
@@ -215,6 +215,7 @@ export default function Footer() {
 							</p>
 						</article>
 						<form>
+							pad
 							<input
 								className=""
 								type="mail"

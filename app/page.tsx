@@ -5,6 +5,7 @@ import appStore from '../public/icons/app-store.svg'
 import mobileApp from '../public/free-Ui-view-mobile-app-mockup-1.png'
 import mockup from '../public/android-smartphone-free-mockup.png'
 import { v4 as uuidv4 } from 'uuid'
+
 export default function Home() {
 	return (
 		<div>
