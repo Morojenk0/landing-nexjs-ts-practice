@@ -99,11 +99,7 @@ export default function Navigation() {
 							['https://twitter.com', twitter],
 							['https://youtube.com', youtube],
 						].map(([link, imageSrc]) => (
-							<li
-								key={() => {
-									uuidv4()
-								}}
-							>
+							<li key={uuidv4()}>
 								<a
 									href={link}
 									target="_blank"

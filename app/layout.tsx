@@ -22,7 +22,7 @@ export default function RootLayout({
 			<body className={`${josefinSans.className}`}>
 				{children}
 				<Footer />
-				{/* rewrite navigation */}
+				{/* check absolute horizontal center */}
 			</body>
 		</html>
 	)
