@@ -9,7 +9,7 @@ export default function Footer() {
 	return (
 		<footer className="bg-black">
 			<section className="container">
-				<section className="relative">
+				<section className="relative hidden">
 					<div
 						className="absolute left-0 right-0 -mt-[9.7rem] py-[1.87rem] px-[2.12rem] flex flex-col bg-white rounded-[1.875rem] shadow-box-shadow
 						tablet:-mt-[4.7rem] tablet:py-[1.37rem] tablet:px-[1.13rem] tablet:flex-row

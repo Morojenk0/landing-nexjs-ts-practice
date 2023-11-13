@@ -4,6 +4,14 @@ import googlePlay from '../public/icons/google-play.svg'
 import appStore from '../public/icons/app-store.svg'
 import mobileApp from '../public/free-Ui-view-mobile-app-mockup-1.png'
 import mockup from '../public/android-smartphone-free-mockup.png'
+import app from '../public/app.png'
+import comment from '../public/icons/comment.svg'
+import browser from '../public/icons/browser.svg'
+import vector from '../public/icons/vector.svg'
+import cellPhone from '../public/icons/cell-phone.svg'
+import eyeScanner from '../public/icons/eye-scanner-1.svg'
+import maleTelemarketer from '../public/icons/male-telemarketer.svg'
+
 import { v4 as uuidv4 } from 'uuid'
 
 export default function Home() {
@@ -208,7 +216,221 @@ export default function Home() {
 							</div>
 						</div>
 					</section>
-					<section id="features"></section>
+					<section
+						className="bg-features-image bg-cover bg-center bg-no-repeat"
+						id="features"
+					>
+						<div
+							className="container py-[3.75rem]
+						tablet:py-[7.5rem]"
+						>
+							<article
+								className="mx-auto max-w-[18.75rem] text-center
+							tablet:max-w-[28.125rem]
+							lg:max-w-[37.5625rem]"
+							>
+								<h2 className="text-white text-2xl uppercase">app features</h2>
+								<p className="mt-[1.12rem] text-white text-base">
+									<span className="tablet:hidden">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Viverra nunc ante velit vitae.
+									</span>
+									<span className="hidden tablet:block lg:hidden">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Viverra nunc ante velit vitae. Est tellus vitae, nullam
+										lobortis enim. Faucibus amet etiam tincidunt rhoncus.
+									</span>
+									<span className="hidden lg:block">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Viverra nunc ante velit vitae. Est tellus vitae, nullam
+										lobortis enim. Faucibus amet etiam tincidunt rhoncus,
+										ullamcorper velit. Ullamcorper risus tempor, ac nunc libero
+										urna, feugiat.
+									</span>
+								</p>
+							</article>
+
+							<section>
+								<div
+									className="mt-[2rem] flex flex-col justify-center items-center gap-y-[2.5rem]
+								tablet:mt-[3.75rem]"
+								>
+									<article className="max-w-max flex flex-col items-center justify-center text-center">
+										<Image
+											className="mx-auto"
+											src={comment}
+											alt="comment"
+										></Image>
+										<h3
+											className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
+													tablet:max-w-[13.9375rem]
+										lg:max-w-[21.625rem] lg:mt-[1.38rem] lg:text-2xl"
+										>
+											Full free chat
+										</h3>
+										<p
+											className="mt-[1.13rem] max-w-[13.9375rem] text-white text-base
+												tablet:max-w-[13.9375rem]
+												lg:max-w-[18.5625rem]"
+										>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										</p>
+									</article>
+									<div
+										className="flex flex-col justify-center items-center gap-y-[3.75rem]
+									tablet:flex-row tablet:items-stretch tablet:gap-x-[1.13rem]
+									lg:gap-x-[3.75rem]"
+									>
+										<div
+											className="flex flex-col gap-y-[2.5rem] 
+										tablet:gap-y-[0] tablet:justify-between tablet:pt-[1.06rem] tablet:pb-[1.5rem]
+										lg:py-[3.8rem]"
+										>
+											<article
+												className="max-w-max flex flex-col items-end justify-center text-center
+											tablet:text-right"
+											>
+												<Image
+													className="mx-auto tablet:mx-0"
+													src={browser}
+													alt="browser"
+												></Image>
+												<h3
+													className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
+													tablet:max-w-[13.9375rem]
+										lg:max-w-[21.625rem] lg:mt-[1.38rem] lg:text-2xl"
+												>
+													unlimiter features
+												</h3>
+												<p
+													className="mt-[1.13rem] max-w-[13.9375rem] text-white text-base
+												tablet:max-w-[13.9375rem]
+												lg:max-w-[18.5625rem]"
+												>
+													Lorem ipsum dolor sit amet, consectetur adipiscing
+													elit.
+												</p>
+											</article>
+											<article
+												className="max-w-max flex flex-col items-end justify-center text-center
+											tablet:text-right"
+											>
+												<Image
+													className="mx-auto tablet:mx-0"
+													src={vector}
+													alt="vector"
+												></Image>
+												<h3
+													className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
+													tablet:max-w-[13.9375rem]
+										lg:max-w-[21.625rem] lg:mt-[1.38rem] lg:text-2xl"
+												>
+													awsome ui design
+												</h3>
+												<p
+													className="mt-[1.13rem] max-w-[13.9375rem] text-white text-base
+												tablet:max-w-[13.9375rem]
+												lg:max-w-[18.5625rem]"
+												>
+													Lorem ipsum dolor sit amet, consectetur adipiscing
+													elit.
+												</p>
+											</article>
+										</div>
+										<div className="">
+											<Image
+												className="w-[13.375rem] h-[29.25rem] rounded-[2.5rem] shadow-[40px_40px_100px_0px_rgba(24,48,63,0.50)]
+												tablet:shadow-[10px_10px_100px_0px_rgba(24,48,63,0.50)]
+												lg:w-[23.4375rem] lg:h-[50.75rem] lg:shadow-[40px_40px_100px_0px_rgba(24,48,63,0.50)]
+												"
+												src={app}
+												alt="app"
+											></Image>
+										</div>
+										<div
+											className="flex flex-col gap-y-[2.5rem] 
+										tablet:gap-y-[0] tablet:justify-between tablet:pt-[1.06rem]
+										lg:py-[3.8rem]
+										"
+										>
+											<article
+												className="max-w-max flex flex-col items-center justify-center text-center
+											tablet:text-left  tablet:items-start"
+											>
+												<Image
+													className="mx-auto
+													tablet:mx-0"
+													src={cellPhone}
+													alt="cellPhone"
+												></Image>
+												<h3
+													className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
+													tablet:max-w-[13.9375rem]
+										lg:max-w-[21.625rem] lg:mt-[1.38rem] lg:text-2xl"
+												>
+													iso & androind version
+												</h3>
+												<p
+													className="mt-[1.13rem] max-w-[13.9375rem] text-white text-base
+												tablet:max-w-[13.9375rem]
+												lg:max-w-[18.5625rem]"
+												>
+													Lorem ipsum dolor sit amet, consectetur adipiscing
+													elit.
+												</p>
+											</article>
+											<article
+												className="max-w-max flex flex-col items-center justify-center text-center
+											tablet:text-left tablet:items-start tablet:-mb-[.6rem] lg:-mb-0"
+											>
+												<Image
+													className="mx-auto
+													tablet:mx-0"
+													src={eyeScanner}
+													alt="eyeScanner"
+												></Image>
+												<h3
+													className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
+													tablet:max-w-[13.9375rem]
+												lg:max-w-[21.625rem] lg:mt-[1.38rem] lg:text-2xl"
+												>
+													retina ready greaphics
+												</h3>
+												<p
+													className="mt-[1.13rem] max-w-[13.9375rem] text-white text-base
+												tablet:max-w-[13.9375rem]
+												lg:max-w-[18.5625rem]"
+												>
+													Lorem ipsum dolor sit amet, consectetur adipiscing
+													elit.
+												</p>
+											</article>
+										</div>
+									</div>
+									<article className="max-w-max flex flex-col items-center justify-center text-center">
+										<Image
+											className="mx-auto"
+											src={maleTelemarketer}
+											alt="maleTelemarketer"
+										></Image>
+										<h3
+											className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
+													tablet:max-w-[19.9375rem]
+													lg:mt-[1.38rem] lg:text-2xl"
+										>
+											24/7 support by real pepole
+										</h3>
+										<p
+											className="mt-[1.13rem] max-w-[18.5625rem] text-white text-base
+												lg:max-w-[18.5625rem]"
+										>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										</p>
+									</article>
+								</div>
+							</section>
+						</div>
+					</section>
 					<section id="screenshot"></section>
 				</div>
 			</main>
