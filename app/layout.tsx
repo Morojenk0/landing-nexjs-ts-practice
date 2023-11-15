@@ -22,7 +22,8 @@ export default function RootLayout({
 			<body className={`${josefinSans.className}`}>
 				{children}
 				<Footer />
-				{/* check absolute horizontal center */}
+				{/* fix border and features */}
+				{/* MORE SNIPPETS */}
 			</body>
 		</html>
 	)
