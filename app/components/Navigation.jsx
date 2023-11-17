@@ -145,7 +145,7 @@ export default function Navigation() {
 						<Link href="/">
 							<Image
 								className="box-content -m-2 p-2
-								tablet:w-[10.4375rem] tablet:lg:h-[1.5rem] 
+								tablet:w-[10.4375rem] tablet:h-[1.5rem] 
 								lg:w-[10.4375rem] lg:h-[1.75rem]"
 								src={logo}
 								alt="logo"

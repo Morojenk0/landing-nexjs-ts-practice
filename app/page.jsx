@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import Navigation from './components/Navigation'
+
+import { v4 as uuidv4 } from 'uuid'
+
 import googlePlay from '../public/icons/google-play.svg'
 import appStore from '../public/icons/app-store.svg'
 import mobileApp from '../public/free-Ui-view-mobile-app-mockup-1.png'
@@ -14,13 +17,6 @@ import maleTelemarketer from '../public/icons/male-telemarketer.svg'
 import carla from '../public/carla.png'
 import craig from '../public/craig.png'
 import jocelyn from '../public/jocelyn.png'
-
-import facebook from '../public/icons/facebook-fill.svg'
-import instagram from '../public/icons/instagram-fill.svg'
-import twitter from '../public/icons/twitter-fill.svg'
-import youtube from '../public/icons/youtube-fill.svg'
-
-import { v4 as uuidv4 } from 'uuid'
 
 export default function Home() {
 	return (
@@ -286,17 +282,18 @@ export default function Home() {
 									</article>
 									<div
 										className="flex flex-col justify-center items-center gap-y-[3.75rem]
-									tablet:flex-row tablet:items-stretch tablet:gap-x-[1.13rem]
+									tablet:flex-row tablet:gap-y-[0rem] tablet:items-stretch tablet:gap-x-[1.13rem]
 									lg:gap-x-[3.75rem]"
 									>
 										<div
-											className="flex flex-col gap-y-[2.5rem] 
+											className="flex flex-col gap-y-[2.5rem]
 										tablet:gap-y-[0] tablet:justify-between tablet:pt-[1.06rem] tablet:pb-[1.5rem]
 										lg:py-[3.8rem]"
 										>
 											<article
-												className="max-w-max flex flex-col items-end justify-center text-center
-											tablet:text-right"
+												className=" flex flex-col  justify-center text-center
+												tablet:items-end tablet:text-right
+												lg:max-w-[25rem]"
 											>
 												<Image
 													className="mx-auto tablet:mx-0"
@@ -304,24 +301,19 @@ export default function Home() {
 													alt="browser"
 												></Image>
 												<h3
-													className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
-													tablet:max-w-[13.9375rem]
-										lg:max-w-[21.625rem] lg:mt-[1.38rem] lg:text-2xl"
+													className=" mt-[1.8rem] text-white text-xl uppercase
+													 lg:text-2xl"
 												>
 													unlimiter features
 												</h3>
-												<p
-													className="mt-[1.13rem] max-w-[13.9375rem] text-white text-base
-												tablet:max-w-[13.9375rem]
-												lg:max-w-[18.5625rem]"
-												>
+												<p className="mt-[1.13rem] text-white text-base">
 													Lorem ipsum dolor sit amet, consectetur adipiscing
 													elit.
 												</p>
 											</article>
 											<article
-												className="max-w-max flex flex-col items-end justify-center text-center
-											tablet:text-right"
+												className="flex flex-col justify-center text-center
+												tablet:items-end tablet:text-right"
 											>
 												<Image
 													className="mx-auto tablet:mx-0"
@@ -329,16 +321,14 @@ export default function Home() {
 													alt="vector"
 												></Image>
 												<h3
-													className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
-													tablet:max-w-[13.9375rem]
-										lg:max-w-[21.625rem] lg:mt-[1.38rem] lg:text-2xl"
+													className=" mt-[1.8rem] text-white text-xl uppercase
+													lg:max-w-[18.5625rem] lg:mt-[1.38rem] lg:text-2xl"
 												>
 													awsome ui design
 												</h3>
 												<p
-													className="mt-[1.13rem] max-w-[13.9375rem] text-white text-base
-												tablet:max-w-[13.9375rem]
-												lg:max-w-[18.5625rem]"
+													className="mt-[1.13rem]  text-white text-base
+													lg:max-w-[18.5625rem]"
 												>
 													Lorem ipsum dolor sit amet, consectetur adipiscing
 													elit.
@@ -347,10 +337,9 @@ export default function Home() {
 										</div>
 										<div className="">
 											<Image
-												className="w-[13.375rem] h-[29.25rem] rounded-[2.5rem] shadow-[40px_40px_100px_0px_rgba(24,48,63,0.50)]
-												tablet:shadow-[10px_10px_100px_0px_rgba(24,48,63,0.50)]
-												lg:w-[23.4375rem] lg:h-[50.75rem] lg:shadow-[40px_40px_100px_0px_rgba(24,48,63,0.50)]
-												"
+												className="max-w-[13.375rem] max-h-[29.25rem] rounded-[2.5rem] shadow-[40px_40px_100px_0px_rgba(24,48,63,0.50)]
+												tablet:max-w-[13.175rem] tablet:max-h-[29.25rem] tablet:shadow-[10px_10px_100px_0px_rgba(24,48,63,0.50)]
+												lg:max-w-[23.4375rem] lg:max-h-[50.75rem] lg:shadow-[40px_40px_100px_0px_rgba(24,48,63,0.50)]"
 												src={app}
 												alt="app"
 											></Image>
@@ -358,12 +347,11 @@ export default function Home() {
 										<div
 											className="flex flex-col gap-y-[2.5rem] 
 										tablet:gap-y-[0] tablet:justify-between tablet:pt-[1.06rem]
-										lg:py-[3.8rem]
-										"
+										lg:py-[3.8rem]"
 										>
 											<article
-												className="max-w-max flex flex-col items-center justify-center text-center
-											tablet:text-left  tablet:items-start"
+												className=" flex flex-col items-center justify-center text-center
+											tablet:text-left tablet:items-start"
 											>
 												<Image
 													className="mx-auto
@@ -372,23 +360,22 @@ export default function Home() {
 													alt="cellPhone"
 												></Image>
 												<h3
-													className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
-													tablet:max-w-[13.9375rem]
-										lg:max-w-[21.625rem] lg:mt-[1.38rem] lg:text-2xl"
+													className="max-w-[12rem] mt-[1.8rem] text-white text-xl uppercase	
+													tablet:max-w-[14rem]
+										 			lg:max-w-[22rem] lg:mt-[1.38rem] lg:text-2xl"
 												>
 													iso & androind version
 												</h3>
 												<p
-													className="mt-[1.13rem] max-w-[13.9375rem] text-white text-base
-												tablet:max-w-[13.9375rem]
-												lg:max-w-[18.5625rem]"
+													className="mt-[1.13rem] text-white text-base
+													lg:max-w-[18.5625rem]"
 												>
 													Lorem ipsum dolor sit amet, consectetur adipiscing
 													elit.
 												</p>
 											</article>
 											<article
-												className="max-w-max flex flex-col items-center justify-center text-center
+												className="flex flex-col items-center justify-center text-center
 											tablet:text-left tablet:items-start tablet:-mb-[.6rem] lg:-mb-0"
 											>
 												<Image
@@ -398,40 +385,30 @@ export default function Home() {
 													alt="eyeScanner"
 												></Image>
 												<h3
-													className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
-													tablet:max-w-[13.9375rem]
-												lg:max-w-[21.625rem] lg:mt-[1.38rem] lg:text-2xl"
+													className="max-w-[9.9375rem] mt-[1.8rem] text-white text-xl uppercase
+													tablet:max-w-[14rem]
+												 lg:max-w-[22rem] lg:mt-[1.38rem] lg:text-2xl"
 												>
 													retina ready greaphics
 												</h3>
-												<p
-													className="mt-[1.13rem] max-w-[13.9375rem] text-white text-base
-												tablet:max-w-[13.9375rem]
-												lg:max-w-[18.5625rem]"
-												>
+												<p className="mt-[1.13rem] text-white text-base">
 													Lorem ipsum dolor sit amet, consectetur adipiscing
 													elit.
 												</p>
 											</article>
 										</div>
 									</div>
-									<article className="max-w-max flex flex-col items-center justify-center text-center">
+
+									<article className="flex flex-col items-center justify-center text-center">
 										<Image
 											className="mx-auto"
 											src={maleTelemarketer}
 											alt="maleTelemarketer"
 										></Image>
-										<h3
-											className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
-													tablet:max-w-[19.9375rem]
-													lg:mt-[1.38rem] lg:text-2xl"
-										>
+										<h3 className="mt-[1.8rem] text-white text-xl uppercase lg:mt-[1.38rem] lg:text-2xl">
 											24/7 support by real pepole
 										</h3>
-										<p
-											className="mt-[1.13rem] max-w-[18.5625rem] text-white text-base
-												lg:max-w-[18.5625rem]"
-										>
+										<p className="mt-[1.13rem] text-white text-base">
 											Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 										</p>
 									</article>
@@ -449,11 +426,7 @@ export default function Home() {
 						tablet:pt-[15rem] tablet:pb-[7.5rem]
 						desktop:pt-[17.7rem]"
 						>
-							<article
-								className="max-w-[18.75rem] mx-auto text-center 
-							sm:max-w-[28.125rem] 
-							xl:max-w-[37.5625rem]"
-							>
+							<article className="mx-auto text-center">
 								<h2
 									className="text-black text-2xl uppercase  
 								tablet:text-3xl"
@@ -519,14 +492,14 @@ export default function Home() {
 										<article
 											className="max-w-[21.4375rem] pt-[2.5rem] pb-[3.3rem] px-[1.1rem] flex flex-col items-center justify-center text-center bg-white rounded-[.625rem] shadow-[0px_1px_10px_0px_rgba(0,0,0,0.10)]
 										tablet:max-w-[13.3125rem] tablet:px-[.38rem] tablet:pb-[1.9rem]
-										lg:max-w-[23.125rem] lg:px-[1.1rem] lg:pb-[3.3rem]"
+										lg:max-w-[23.125rem] lg:px-[1.1rem] lg:pb-[3.3rem] "
 											key={uuidv4()}
 										>
 											<div className="relative z-20">
 												<Image
 													className=" w-[12.375rem] h-[12.375rem] after:content-[url('../public/shapes/avatar-border.svg')] after:absolute after:top-0 after:w-[13.375rem] after:h-[13.375rem] after:-z-10
 													tablet:w-[10rem] tablet:h-[10rem]
-													lg:w-[12.375rem] lg:h-[12.375rem]"
+													lg:w-[12.375rem] lg:h-[12.375rem] "
 													src={photo}
 													alt={photo}
 												></Image>
