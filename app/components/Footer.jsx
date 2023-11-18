@@ -157,7 +157,7 @@ export default function Footer() {
 									target="_blank"
 								>
 									<svg
-										className="group w-[1.5rem] h-[1.5rem] transition hover:scale-125"
+										className="group w-[1.5rem] h-[1.5rem] box-content -m-2 p-2 transition hover:scale-125"
 										xmlns="http://www.w3.org/2000/svg"
 									>
 										<g clipPath="url(#clip0_152_754)">
