@@ -18,6 +18,11 @@ import carla from '../public/carla.png'
 import craig from '../public/craig.png'
 import jocelyn from '../public/jocelyn.png'
 
+import download from '../public/icons/download-2-fill.svg'
+import like from '../public/icons/thumb-up-fill.svg'
+import star from '../public/icons/star-fill.svg'
+import iPhone12Mockup from '../public/Gravity-Scene-iPhone-12-Mockup 1.png'
+
 export default function Home() {
 	return (
 		<div>
@@ -414,6 +419,111 @@ export default function Home() {
 				</section>
 				{/* screenshot */}
 				<section id="screenshot"></section>
+				{/* download */}
+				<section
+					className="bg-white"
+					id="download"
+				>
+					<div
+						className="container items-center py-[3.75rem] flex flex-col gap-y-[3.75rem]
+					tablet:py-[7.5rem] tablet:flex-row tablet:justify-between tablet:gap-y-[0rem]
+					xl:py-[7.5rem]"
+					>
+						<div
+							className="max-w-[20.90513rem]
+						tablet:max-w-[20.25rem]
+						lg:max-w-[35.625rem]"
+						>
+							<article className="">
+								<h2
+									className="max-w-[18rem] text-black text-2xl uppercase
+									tablet:text-3xl
+									lg:max-w-full"
+								>
+									Download App Now
+								</h2>
+								<p className="mt-[1.12rem] text-gray text-base">
+									<span className="lg:hidden">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Viverra nunc ante velit vitae. Est tellus vitae, nullam
+										lobortis enim.
+									</span>
+									<span className="hidden lg:block">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Viverra nunc ante velit vitae. Est tellus vitae, nullam
+										lobortis enim. Faucibus amet etiam tincidunt rhoncus,
+										ullamcorper velit. Ullamcorper risus tempor, ac nunc libero
+										urna, feugiat.
+									</span>
+								</p>
+							</article>
+							<div
+								className="mt-[2.5rem] flex flex-row justify-between
+							lg:justify-normal lg:gap-x-[1.56rem]"
+							>
+								<Image
+									className="w-[9.3125rem] h-[2.9375rem]"
+									src={googlePlay}
+									alt="googlePlay"
+								></Image>
+								<Image
+									className="w-[9.3125rem] h-[2.9375rem]"
+									src={appStore}
+									alt="appStore"
+								></Image>
+							</div>
+							<div
+								className="mt-[3.75rem] flex flex-row justify-between
+							tablet:mt-[2.5rem]
+							lg:mt-[3.75rem]"
+							>
+								{[
+									[download, '59865', 'Download'],
+									[like, '29852', 'Like'],
+									[star, '1500', '5 star raiting'],
+								].map(([image, number, category]) => (
+									<article
+										className="w-[6rem] py-[.75rem] flex flex-col items-center bg-blue rounded-[.3125rem]
+										lg:w-[10.625rem] lg:pt-[1.9rem] lg:pb-[1.25rem] lg:rounded-[.625rem]"
+										key={uuidv4()}
+									>
+										<Image
+											className="w-[1.25rem] h-[1.25rem]
+											lg:w-[2.1875rem] lg:h-[2.1875rem]"
+											src={image}
+											alt={image}
+										></Image>
+										<h4
+											className="mt-[.5rem] text-white text-xl
+										lg:mt-[1.3rem] lg:text-2xl"
+										>
+											{number}
+										</h4>
+										<p
+											className="text-white text-base 
+										lg:mt-[1.13rem] lg:text-xl lg:uppercase"
+										>
+											{category}
+										</p>
+									</article>
+								))}
+							</div>
+						</div>
+						<div
+							className="flex
+						tablet:items-end"
+						>
+							<Image
+								className="max-w-[20.905rem] max-h-[19.446rem]
+								tablet:-mb-[.4rem]
+								lg:max-w-[26.25rem] lg:max-h-[25rem]
+								xl:max-w-[32.25rem] xl:max-h-[30rem] lg:-mb-[.8rem]"
+								src={iPhone12Mockup}
+								alt="iPhone12Mockup"
+							></Image>
+						</div>
+					</div>
+				</section>
 				{/* guide */}
 				<section className="bg-blue bg-guide-image bg-cover bg-center bg-no-repeat">
 					<div
@@ -454,7 +564,6 @@ export default function Home() {
 						<PlayButton />
 					</div>
 				</section>
-
 				{/* team */}
 				<section
 					className="bg-white"
