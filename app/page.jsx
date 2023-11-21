@@ -648,7 +648,11 @@ export default function Home() {
 										key={uuidv4()}
 									>
 										<div className="w-full">
-											<div className="relative rounded-full before:content-[url('../public/shapes/avatar-border.svg')] before:absolute before:top-0 before:right-0 before:bottom-0 before:left-0 before:m-auto before:w-[13.75rem] before:h-[13.75rem] ">
+											<div
+												className="relative rounded-full before:content-[url('../public/shapes/avatar-border.svg')] before:absolute before:top-0 before:right-0 before:bottom-0 before:left-0 before:m-auto before:w-[13.75rem] before:h-[13.75rem]
+											tablet:before:content-[url('../public/shapes/avatar-border-tablet.svg')] tablet:before:w-[11.125rem] tablet:before:h-[11.125rem]
+											lg:before:content-[url('../public/shapes/avatar-border.svg')] lg:before:w-[13.75rem] lg:before:h-[13.75rem]"
+											>
 												<Image
 													className="mx-auto w-[12.375rem] h-[12.375rem] 
 													tablet:w-[10rem] tablet:h-[10rem]
