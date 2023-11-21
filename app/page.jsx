@@ -22,8 +22,12 @@ import download from '../public/icons/download-2-fill.svg'
 import like from '../public/icons/thumb-up-fill.svg'
 import star from '../public/icons/star-fill.svg'
 import iPhone12Mockup from '../public/Gravity-Scene-iPhone-12-Mockup 1.png'
+import { promises as fs } from 'fs'
 
-export default function Home() {
+export default async function Home() {
+	const file = await fs.readFile(process.cwd() + '/app/api/data.json', 'utf-8')
+	const data = JSON.parse(file)
+	console.log(data.raitings)
 	return (
 		<div>
 			<header className="bg-hero-image bg-cover bg-center bg-no-repeat">
@@ -478,10 +482,10 @@ export default function Home() {
 							lg:mt-[3.75rem]"
 							>
 								{[
-									[download, '59865', 'Download'],
-									[like, '29852', 'Like'],
-									[star, '1500', '5 star raiting'],
-								].map(([image, number, category]) => (
+									[download, data.raitings[0], 'Download'],
+									[like, data.raitings[1], 'Like'],
+									[star, data.raitings[2], '5 star raiting'],
+								].map(([image, data, category]) => (
 									<article
 										className="w-[6rem] py-[.75rem] flex flex-col items-center bg-blue rounded-[.3125rem]
 										lg:w-[10.625rem] lg:pt-[1.9rem] lg:pb-[1.25rem] lg:rounded-[.625rem]"
@@ -497,7 +501,7 @@ export default function Home() {
 											className="mt-[.5rem] text-white text-xl
 										lg:mt-[1.3rem] lg:text-2xl"
 										>
-											{number}
+											{data}
 										</h4>
 										<p
 											className="text-white text-base 
