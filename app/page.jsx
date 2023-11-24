@@ -3,31 +3,33 @@ import Navigation from './components/Navigation'
 import PlayButton from './components/PlayButton'
 import { v4 as uuidv4 } from 'uuid'
 
-import googlePlay from '../public/icons/google-play.svg'
-import appStore from '../public/icons/app-store.svg'
-import mobileApp from '../public/free-Ui-view-mobile-app-mockup-1.png'
-import mockup from '../public/android-smartphone-free-mockup.png'
-import app from '../public/app.png'
-import comment from '../public/icons/comment.svg'
-import browser from '../public/icons/browser.svg'
-import vector from '../public/icons/vector.svg'
-import cellPhone from '../public/icons/cell-phone.svg'
-import eyeScanner from '../public/icons/eye-scanner-1.svg'
-import maleTelemarketer from '../public/icons/male-telemarketer.svg'
-import carla from '../public/carla.png'
-import craig from '../public/craig.png'
-import jocelyn from '../public/jocelyn.png'
+import getData from '@/lib/data.js'
 
-import download from '../public/icons/download-2-fill.svg'
-import like from '../public/icons/thumb-up-fill.svg'
-import star from '../public/icons/star-fill.svg'
-import iPhone12Mockup from '../public/Gravity-Scene-iPhone-12-Mockup 1.png'
-import { promises as fs } from 'fs'
+import googlePlay from '@/public/icons/google-play.svg'
+import appStore from '@/public/icons/app-store.svg'
+import mobileApp from '@/public/free-Ui-view-mobile-app-mockup-1.png'
+import mockup from '@/public/android-smartphone-free-mockup.png'
+import app from '@/public/app.png'
+import comment from '@/public/icons/comment.svg'
+import browser from '@/public/icons/browser.svg'
+import vector from '@/public/icons/vector.svg'
+import cellPhone from '@/public/icons/cell-phone.svg'
+import eyeScanner from '@/public/icons/eye-scanner-1.svg'
+import maleTelemarketer from '@/public/icons/male-telemarketer.svg'
+import carla from '@/public/carla.png'
+import craig from '@/public/craig.png'
+import jocelyn from '@/public/jocelyn.png'
+
+import download from '@/public/icons/download-2-fill.svg'
+import like from '@/public/icons/thumb-up-fill.svg'
+import star from '@/public/icons/star-fill.svg'
+import iPhone12Mockup from '@/public/Gravity-Scene-iPhone-12-Mockup 1.png'
 
 export default async function Home() {
-	const file = await fs.readFile(process.cwd() + '/app/api/data.json', 'utf-8')
-	const data = JSON.parse(file)
-	console.log(data.raitings)
+	const db = getData()
+
+	const data = await db
+
 	return (
 		<div>
 			<header className="bg-hero-image bg-cover bg-center bg-no-repeat">
@@ -465,16 +467,26 @@ export default async function Home() {
 								className="mt-[2.5rem] flex flex-row justify-between
 							lg:justify-normal lg:gap-x-[1.56rem]"
 							>
-								<Image
-									className="w-[9.3125rem] h-[2.9375rem]"
-									src={googlePlay}
-									alt="googlePlay"
-								></Image>
-								<Image
-									className="w-[9.3125rem] h-[2.9375rem]"
-									src={appStore}
-									alt="appStore"
-								></Image>
+								<a
+									href="https://store.google.com/regionpicker"
+									target="_blank"
+								>
+									<Image
+										className="w-[9.3125rem] h-[2.9375rem]"
+										src={googlePlay}
+										alt="googlePlay"
+									></Image>
+								</a>
+								<a
+									href="https://www.apple.com/"
+									target="_blank"
+								>
+									<Image
+										className="w-[9.3125rem] h-[2.9375rem]"
+										src={appStore}
+										alt="appStore"
+									></Image>
+								</a>
 							</div>
 							<div
 								className="mt-[3.75rem] flex flex-row justify-between

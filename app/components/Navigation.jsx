@@ -4,13 +4,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'
 
-import menuClose from '../../public/icons/menu-close.svg'
-import facebook from '../../public/icons/facebook-fill.svg'
-import instagram from '../../public/icons/instagram-fill.svg'
-import twitter from '../../public/icons/twitter-fill.svg'
-import youtube from '../../public/icons/youtube-fill.svg'
-import logo from '../../public/icons/logo.svg'
-import menu from '../../public/icons/menu-line.svg'
+import menuClose from '@/public/icons/menu-close.svg'
+import facebook from '@/public/icons/facebook-fill.svg'
+import instagram from '@/public/icons/instagram-fill.svg'
+import twitter from '@/public/icons/twitter-fill.svg'
+import youtube from '@/public/icons/youtube-fill.svg'
+import logo from '@/public/icons/logo.svg'
+import menu from '@/public/icons/menu-line.svg'
 
 const toggleMenu = () => {
 	const menu = document.getElementById('hamburgerMenu')

@@ -2,8 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { v4 as uuidv4 } from 'uuid'
 
-import mail from '../../public/icons/mail-fill.svg'
-import phone from '../../public/icons/phone-fill.svg'
+import mail from '@/public/icons/mail-fill.svg'
+import phone from '@/public/icons/phone-fill.svg'
 
 export default function Footer() {
 	return (
