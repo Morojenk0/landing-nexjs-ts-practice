@@ -18,6 +18,8 @@ const config: Config = {
 		extend: {
 			backgroundImage: {
 				'hero-image': "url('../public/hero.png')",
+				'features-image': "url('../public/features-bg.png')",
+				'guide-image': "url('../public/guide-bg.png')",
 			},
 			screens: {
 				mobile: '375px',

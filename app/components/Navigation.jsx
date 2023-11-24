@@ -2,14 +2,15 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { v4 as uuidv4 } from 'uuid'
 
-import menuClose from '../../public/icons/menu-close.svg'
-import facebook from '../../public/icons/facebook-fill.svg'
-import instagram from '../../public/icons/instagram-fill.svg'
-import twitter from '../../public/icons/twitter-fill.svg'
-import youtube from '../../public/icons/youtube-fill.svg'
-import logo from '../../public/icons/logo.svg'
-import menu from '../../public/icons/menu-line.svg'
+import menuClose from '@/public/icons/menu-close.svg'
+import facebook from '@/public/icons/facebook-fill.svg'
+import instagram from '@/public/icons/instagram-fill.svg'
+import twitter from '@/public/icons/twitter-fill.svg'
+import youtube from '@/public/icons/youtube-fill.svg'
+import logo from '@/public/icons/logo.svg'
+import menu from '@/public/icons/menu-line.svg'
 
 const toggleMenu = () => {
 	const menu = document.getElementById('hamburgerMenu')
@@ -35,46 +36,25 @@ export default function Navigation() {
 					/>
 				</div>
 				<ul className="absolute w-[100%] top-[25%]">
-					<li>
-						<Link
-							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-300 transition"
-							href="/"
-						>
-							home
-						</Link>
-					</li>
-					<li>
-						<Link
-							className="py-[.65rem] box-content block text-center  text-gray text-xl uppercase hover:text-white duration-500 transition"
-							href="/about"
-						>
-							About
-						</Link>
-					</li>
-					<li>
-						<Link
-							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-500 transition"
-							href="/features"
-						>
-							Features
-						</Link>
-					</li>
-					<li>
-						<Link
-							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-500 transition"
-							href="/screenshot"
-						>
-							Screenshot
-						</Link>
-					</li>
-					<li>
-						<Link
-							className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-500 transition"
-							href="/blog"
-						>
-							blog
-						</Link>
-					</li>
+					{[
+						['home', '/'],
+						['about', '/#about'],
+						['features', '/#features'],
+						['screenshot', '/#screenshot'],
+						['blog', '/blog'],
+					].map(([title, link]) => (
+						<li key={uuidv4()}>
+							<Link
+								className="py-[.65rem] box-content block text-center text-gray text-xl uppercase hover:text-white duration-500 transition"
+								href={link}
+								onClick={() => {
+									toggleMenu()
+								}}
+							>
+								{title}
+							</Link>
+						</li>
+					))}
 				</ul>
 			</div>
 			<div
@@ -112,57 +92,26 @@ export default function Navigation() {
 							</p>
 						</div>
 					</address>
-					<ul>
-						<div className="flex gap-x-[1.9rem]">
-							<li>
+					<ul className="flex gap-x-[1.9rem]">
+						{[
+							['https://facebook.com', facebook],
+							['https://instagram.com', instagram],
+							['https://twitter.com', twitter],
+							['https://youtube.com', youtube],
+						].map(([link, imageSrc]) => (
+							<li key={uuidv4()}>
 								<a
-									href="https://facebook.com"
+									href={link}
 									target="_blank"
 								>
 									<Image
 										className="box-content -m-2 p-2 transition hover:scale-125"
-										src={facebook}
-										alt="facebook"
+										src={imageSrc}
+										alt={imageSrc}
 									/>
 								</a>
 							</li>
-							<li>
-								<a
-									href="https://instagram.com"
-									target="_blank"
-								>
-									<Image
-										className="box-content -m-2 p-2 transition hover:scale-125"
-										src={instagram}
-										alt="instagram"
-									/>
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://twitter.com"
-									target="_blank"
-								>
-									<Image
-										className="box-content -m-2 p-2 transition hover:scale-125"
-										src={twitter}
-										alt="twitter"
-									/>
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://youtube.com"
-									target="_blank"
-								>
-									<Image
-										className="box-content -m-2 p-2 transition hover:scale-125"
-										src={youtube}
-										alt="youtube"
-									/>
-								</a>
-							</li>
-						</div>
+						))}
 					</ul>
 				</div>
 				<div
@@ -171,37 +120,22 @@ export default function Navigation() {
 					desktop:mt-[1.2rem]"
 				>
 					<ul className="hidden ml-[1.5rem] lg:ml-[2.95rem] tablet:flex items-center tablet:gap-x-[1.5rem] lg:gap-x-[2.5rem]">
-						<li>
-							<Link
-								className="text-black uppercase underline-offset-[3px] hover:text-blue hover:underline 
-								tablet:text-sm 
-								lg:text-xl"
-								href="/"
-							>
-								home
-							</Link>
-						</li>
-
-						<li>
-							<Link
-								className="text-black uppercase underline-offset-[3px] hover:text-blue hover:underline 
-								tablet:text-sm 
-								lg:text-xl"
-								href="/about"
-							>
-								About
-							</Link>
-						</li>
-						<li>
-							<Link
-								className="text-black uppercase underline-offset-[3px] hover:text-blue hover:underline 
-								tablet:text-sm 
-								lg:text-xl"
-								href="/features"
-							>
-								Features
-							</Link>
-						</li>
+						{[
+							['home', '/'],
+							['about', '/#about'],
+							['features', '/#features'],
+						].map(([title, link]) => (
+							<li key={uuidv4()}>
+								<Link
+									className="text-black uppercase underline-offset-[3px] hover:text-blue hover:underline 
+									tablet:text-sm 
+									lg:text-xl"
+									href={link}
+								>
+									{title}
+								</Link>
+							</li>
+						))}
 					</ul>
 					<div
 						className="absolute left-0 right-0 w-[6.25rem] mx-auto py-[1.5rem] px-[.7rem] bg-white rounded-[0.3125rem] shadow-box-shadow 
@@ -211,7 +145,7 @@ export default function Navigation() {
 						<Link href="/">
 							<Image
 								className="box-content -m-2 p-2
-								tablet:w-[10.4375rem] tablet:lg:h-[1.5rem] 
+								tablet:w-[10.4375rem] tablet:h-[1.5rem] 
 								lg:w-[10.4375rem] lg:h-[1.75rem]"
 								src={logo}
 								alt="logo"
@@ -223,26 +157,21 @@ export default function Navigation() {
 						tablet:flex tablet:gap-x-[.7rem] 
 						xl:gap-x-[2.5rem]"
 					>
-						<li>
-							<Link
-								className="text-black uppercase underline-offset-[3px] hover:text-blue hover:underline 
-								tablet:text-sm 
-								lg:text-xl "
-								href="/screenshot"
-							>
-								Screenshot
-							</Link>
-						</li>
-						<li>
-							<Link
-								className="text-black uppercase underline-offset-[3px] hover:text-blue hover:underline 
-								tablet:text-sm 
-								lg:text-xl"
-								href="/blog"
-							>
-								Blog
-							</Link>
-						</li>
+						{[
+							['screenshot', '/#screenshot'],
+							['blog', '/blog'],
+						].map(([title, link]) => (
+							<li key={uuidv4()}>
+								<Link
+									className="text-black uppercase underline-offset-[3px] hover:text-blue hover:underline 
+									tablet:text-sm 
+									lg:text-xl"
+									href={link}
+								>
+									{title}
+								</Link>
+							</li>
+						))}
 						<li>
 							<a
 								className="block py-[.50rem] px-[1rem] bg-blue rounded-[0.3125rem] uppercase transition text-white text-base hover:bg-[#4542F2]
