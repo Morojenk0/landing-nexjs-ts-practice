@@ -3,7 +3,7 @@ import Navigation from './components/Navigation'
 import PlayButton from './components/PlayButton'
 import { v4 as uuidv4 } from 'uuid'
 
-import getData from '@/lib/data.js'
+import getData from '@/lib/getData.js'
 
 import googlePlay from '@/public/icons/google-play.svg'
 import appStore from '@/public/icons/app-store.svg'

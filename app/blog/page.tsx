@@ -1,16 +1,18 @@
 // @ts-nocheck
-
 import Navigation from '../components/Navigation'
 import type { Metadata } from 'next'
-import getData from '@/lib/data.js'
 import Link from 'next/link'
+import getPosts from '@/lib/getPosts.js'
+import { Suspense } from 'react'
 export const metadata: Metadata = {
 	title: 'About | Appolly',
 }
 
-export default async function page() {
-	const db = getData()
-	const data = await db
+export default async function Blog() {
+	const postsData = getPosts()
+
+	const posts = await postsData
+	const filteredPosts = posts.filter((post, index) => index < 20)
 
 	return (
 		<div>
@@ -19,24 +21,15 @@ export default async function page() {
 				<h1 className="text-6xl text-white">its Blog Header Title!</h1>
 			</header>
 			<main>
-				{data.blogs.map((blog) => {
+				{filteredPosts.map((post) => {
 					return (
-						<section key={blog.id}>
-							<h2>{blog.title}</h2>
-							<p>{blog.text}</p>
-							<Link
-								href={`/blog/${blog.id}`}
-								target="_blank"
-							>
-								read more
-							</Link>
+						<section key={post.id}>
+							<h2>{post.title}</h2>
+							<p>{post.text}</p>
+							<Link href={`/blog/post/${post.id}`}>read more</Link>
 						</section>
 					)
 				})}
-				<section>
-					<h2></h2>
-					<p></p>
-				</section>
 				<h1 className="text-6xl text-white">its Main Title!</h1>
 			</main>
 		</div>
