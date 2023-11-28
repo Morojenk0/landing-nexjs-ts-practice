@@ -1,16 +1,17 @@
-// @ts-nocheck
-
-import Navigation from '../components/Navigation'
 import type { Metadata } from 'next'
-import getData from '@/lib/data.js'
+import { Suspense } from 'react'
 import Link from 'next/link'
+import getPosts from '@/lib/getPosts'
+import Navigation from '../components/Navigation'
+
 export const metadata: Metadata = {
 	title: 'About | Appolly',
+	description: 'Page with users posts',
 }
 
-export default async function page() {
-	const db = getData()
-	const data = await db
+export default async function Blog() {
+	const postsData = getPosts()
+	const posts: Post[] = await postsData
 
 	return (
 		<div>
@@ -19,24 +20,19 @@ export default async function page() {
 				<h1 className="text-6xl text-white">its Blog Header Title!</h1>
 			</header>
 			<main>
-				{data.blogs.map((blog) => {
-					return (
-						<section key={blog.id}>
-							<h2>{blog.title}</h2>
-							<p>{blog.text}</p>
-							<Link
-								href={`/blog/${blog.id}`}
-								target="_blank"
-							>
-								read more
-							</Link>
-						</section>
-					)
-				})}
-				<section>
-					<h2></h2>
-					<p></p>
-				</section>
+				<Suspense
+					fallback={<h2 className="text-white text-6xl">Loading posts...</h2>}
+				>
+					{posts.map((post: Post) => {
+						return (
+							<section key={post.id}>
+								<h2>{post.title}</h2>
+								<p>{post.body}</p>
+								<Link href={`/blog/post/${post.id}`}>read more</Link>
+							</section>
+						)
+					})}
+				</Suspense>
 				<h1 className="text-6xl text-white">its Main Title!</h1>
 			</main>
 		</div>

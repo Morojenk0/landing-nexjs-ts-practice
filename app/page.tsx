@@ -1,9 +1,8 @@
 import Image from 'next/image'
+import getData from '@/lib/getData'
+import { v4 as uuidv4 } from 'uuid'
 import Navigation from './components/Navigation'
 import PlayButton from './components/PlayButton'
-import { v4 as uuidv4 } from 'uuid'
-
-import getData from '@/lib/data.js'
 
 import googlePlay from '@/public/icons/google-play.svg'
 import appStore from '@/public/icons/app-store.svg'
@@ -19,7 +18,6 @@ import maleTelemarketer from '@/public/icons/male-telemarketer.svg'
 import carla from '@/public/carla.png'
 import craig from '@/public/craig.png'
 import jocelyn from '@/public/jocelyn.png'
-
 import download from '@/public/icons/download-2-fill.svg'
 import like from '@/public/icons/thumb-up-fill.svg'
 import star from '@/public/icons/star-fill.svg'
@@ -656,7 +654,7 @@ export default async function Home() {
 										jocelyn,
 										'jocelyn',
 									],
-								].map(([name, place, text, largeText, photo, link]) => (
+								].map(([name, place, text, largeText, photo, link]: any) => (
 									<article
 										className="max-w-[21.4375rem] pt-[2.5rem] pb-[3.3rem] px-[1.1rem] flex flex-col items-center justify-center text-center bg-white rounded-[.625rem] shadow-[0px_1px_10px_0px_rgba(0,0,0,0.10)]
 										tablet:max-w-[13.3125rem] tablet:px-[.38rem] tablet:pb-[1.9rem]
