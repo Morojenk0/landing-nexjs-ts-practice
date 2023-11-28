@@ -6,7 +6,32 @@ import getPostComments from '@/lib/getPostComments'
 import Navigation from '@/app/components/Navigation'
 import PostItem from './components/PostItem'
 
-export default async function Post({ params: { postId } }) {
+type Params = {
+	params: {
+		postId: string
+	}
+}
+
+export async function generateMetadata({ params: { postId } }: Params) {
+	const postData = getPost(postId)
+	const post = await postData
+
+	return {
+		title: post.title,
+		description: `This is ${post.id} post`,
+	}
+}
+
+export async function generateStaticParams() {
+	const postsdata = getPosts()
+	const posts: Post[] = await postsdata
+
+	return posts.map((post: Post) => ({
+		postId: post.id.toString(),
+	}))
+}
+
+export default async function Post({ params: { postId } }: Params) {
 	const postData = getPost(postId)
 	const post = await postData
 
@@ -30,13 +55,4 @@ export default async function Post({ params: { postId } }) {
 			</div>
 		</div>
 	)
-}
-
-export async function generateStaticParams() {
-	const postsdata = getPosts()
-	const posts = await postsdata
-
-	return posts.map((post) => ({
-		postId: post.id.toString(),
-	}))
 }

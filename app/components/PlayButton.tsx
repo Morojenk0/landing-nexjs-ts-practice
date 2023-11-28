@@ -1,8 +1,8 @@
 'use client'
 
 const play = () => {
-	const video = document.getElementById('video')
-	const playButton = document.getElementById('playButton')
+	const video = document.getElementById('video') as HTMLVideoElement
+	const playButton = document.getElementById('playButton') as HTMLButtonElement
 
 	if (video.paused) {
 		video.play()
@@ -13,7 +13,7 @@ const play = () => {
 	}
 }
 
-function PlayButton() {
+export default function PlayButton() {
 	return (
 		<div
 			className="absolute bg-[#000] w-full max-w-[21.4375rem] max-h-[9.375rem] right-0 left-0 bottom-0 -mb-[4.6rem] mx-auto rounded-[.625rem] overflow-hidden shadow-[0px_10px_100px_0px_rgba(0,0,0,0.24)]
@@ -29,7 +29,13 @@ function PlayButton() {
 					play()
 				}}
 			></video>
-			<button className="w-[4.375rem] h-[4.375rem] absolute top-0 right-0 bottom-0 left-0 m-auto cursor-pointer z-10">
+			<button
+				className="w-[4.375rem] h-[4.375rem] absolute top-0 right-0 bottom-0 left-0 m-auto cursor-pointer z-10"
+				id="playButton"
+				onClick={() => {
+					play()
+				}}
+			>
 				<svg
 					className=""
 					width="70"
@@ -37,10 +43,6 @@ function PlayButton() {
 					viewBox="0 0 70 70"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
-					id="playButton"
-					onClick={() => {
-						play()
-					}}
 				>
 					<circle
 						cx="35"
@@ -83,5 +85,3 @@ function PlayButton() {
 		</div>
 	)
 }
-
-export default PlayButton

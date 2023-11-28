@@ -1,4 +1,4 @@
-export default async function getPostComments(postId) {
+export default async function getPostComments(postId: string) {
 	const res = await fetch(
 		`https://jsonplaceholder.typicode.com/posts/${postId}/comments`
 	)

@@ -13,7 +13,7 @@ import logo from '@/public/icons/logo.svg'
 import menu from '@/public/icons/menu-line.svg'
 
 const toggleMenu = () => {
-	const menu = document.getElementById('hamburgerMenu')
+	const menu = document.getElementById('hamburgerMenu') as HTMLDivElement
 
 	menu.classList.toggle('w-full')
 }

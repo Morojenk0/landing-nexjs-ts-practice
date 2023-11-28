@@ -17,7 +17,7 @@ export default function Footer() {
 					>
 						<article
 							className="flex flex-col items-center
-							tablet:w-[49.5%]  tablet:flex-row"
+							tablet:w-[49.5%] tablet:flex-row"
 						>
 							<div
 								className="w-[3.125rem] h-[3.125rem] flex items-center justify-center bg-blue rounded-full

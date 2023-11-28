@@ -1,6 +1,7 @@
 export default async function PostItem({ promise, comments }) {
 	const post = await promise
 	const qwe = await comments
+
 	const test = Array.from(qwe)
 	const lenght = test.length
 	return (
