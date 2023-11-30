@@ -1,18 +1,16 @@
 import { Suspense } from 'react'
 import { notFound } from 'next/navigation'
-import getPost from '@/lib/getPost'
-import getPosts from '@/lib/getPosts'
-import getPostComments from '@/lib/getPostComments'
+import getPost from '@/app/_lib/getPost'
+import getPosts from '@/app/_lib/getPosts'
+import getPostComments from '@/app/_lib/getPostComments'
 import Navigation from '@/app/components/Navigation'
 import PostItem from './components/PostItem'
 
-type Params = {
-	params: {
-		postId: string
-	}
-}
-
-export async function generateMetadata({ params: { postId } }: Params) {
+export async function generateMetadata({
+	params: { postId },
+}: {
+	params: { postId: string }
+}) {
 	const postData = getPost(postId)
 	const post = await postData
 
@@ -31,7 +29,11 @@ export async function generateStaticParams() {
 	}))
 }
 
-export default async function Post({ params: { postId } }: Params) {
+export default async function Post({
+	params: { postId },
+}: {
+	params: { postId: string }
+}) {
 	const postData = getPost(postId)
 	const post = await postData
 

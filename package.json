@@ -1,29 +1,32 @@
 {
-  "name": "landing-nexjs-ts-practice",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "13.5.6",
-    "react": "^18",
-    "react-dom": "^18"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@types/uuid": "^9.0.6",
-    "autoprefixer": "^10",
-    "eslint": "^8",
-    "eslint-config-next": "13.5.6",
-    "postcss": "^8",
-    "tailwindcss": "^3",
-    "typescript": "^5",
-    "uuid": "^9.0.1"
-  }
+	"name": "landing-nexjs-ts-practice",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev -p 4000",
+		"build": "next build",
+		"start": "next start -p 4000",
+		"lint": "next lint",
+		"node": "nodemon server"
+	},
+	"dependencies": {
+		"express": "^4.18.2",
+		"next": "13.5.6",
+		"nodemon": "^3.0.1",
+		"react": "^18",
+		"react-dom": "^18"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"@types/uuid": "^9.0.6",
+		"autoprefixer": "^10",
+		"eslint": "^8",
+		"eslint-config-next": "13.5.6",
+		"postcss": "^8",
+		"tailwindcss": "^3",
+		"typescript": "^5",
+		"uuid": "^9.0.1"
+	}
 }

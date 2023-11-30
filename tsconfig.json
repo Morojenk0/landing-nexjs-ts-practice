@@ -31,6 +31,6 @@
 		"app/page.jsx",
 		"app/components/Navigation.jsx",
 		"app/blog/page.jsx"
-	],
+, "server.js"	],
 	"exclude": ["node_modules"]
 }

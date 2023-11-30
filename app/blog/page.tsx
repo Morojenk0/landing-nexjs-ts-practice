@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import Link from 'next/link'
-import getPosts from '@/lib/getPosts'
+import getPosts from '@/app/_lib/getPosts'
 import Navigation from '../components/Navigation'
 
 export const metadata: Metadata = {

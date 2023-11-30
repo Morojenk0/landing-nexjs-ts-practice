@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import getData from '@/lib/getData'
+import getData from '@/app/_lib/getData'
 import { v4 as uuidv4 } from 'uuid'
 import Navigation from './components/Navigation'
 import PlayButton from './components/PlayButton'
