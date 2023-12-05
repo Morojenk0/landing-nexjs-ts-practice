@@ -5,6 +5,7 @@ import getPosts from '@/app/_lib/getPosts'
 import getPostComments from '@/app/_lib/getPostComments'
 import Navigation from '@/app/components/Navigation'
 import PostItem from './components/PostItem'
+import getUser from '@/app/_lib/getUser'
 
 export async function generateMetadata({
 	params: { postId },
@@ -34,6 +35,9 @@ export default async function Post({
 }: {
 	params: { postId: string }
 }) {
+	const userData = getUser(postId)
+	const user = await userData
+
 	const postData = getPost(postId)
 	const post = await postData
 
@@ -52,6 +56,7 @@ export default async function Post({
 					<PostItem
 						promise={postData}
 						comments={comments}
+						user={user}
 					/>
 				</Suspense>
 			</div>

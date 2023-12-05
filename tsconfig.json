@@ -30,7 +30,9 @@
 		"app/layout.jsx",
 		"app/page.jsx",
 		"app/components/Navigation.jsx",
-		"app/blog/page.jsx"
-, "server.js"	],
+		"app/blog/page.jsx",
+		"server.js",
+		"app/blog/post/[postId]/components/PostItem.jsx"
+	],
 	"exclude": ["node_modules"]
 }

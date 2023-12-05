@@ -1,4 +1,6 @@
-export default async function PostItem({ promise, comments }) {
+export default async function PostItem({ promise, comments, user }) {
+	const userData = await user
+
 	const post = await promise
 	const qwe = await comments
 
@@ -9,7 +11,7 @@ export default async function PostItem({ promise, comments }) {
 			<section>
 				<div className="flex flex-row">
 					<div></div>
-					<div></div>
+					<div>{userData.name}</div>
 					<div className="text-white">{lenght} comments</div>
 				</div>
 				<h2>{post.title}</h2>
