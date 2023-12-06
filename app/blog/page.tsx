@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import Link from 'next/link'
 import getPosts from '@/app/_lib/getPosts'
-import Navigation from '../components/Navigation'
 
 export const metadata: Metadata = {
 	title: 'About | Appolly',
@@ -12,13 +11,10 @@ export const metadata: Metadata = {
 export default async function Blog() {
 	const postsData = getPosts()
 	const posts: Post[] = await postsData
+	const recentPosts: Post[] = posts.slice(-4)
 
 	return (
 		<div>
-			<header className="bg-hero-image bg-cover bg-center bg-no-repeat">
-				<Navigation />
-				<h1 className="text-6xl text-white">its Blog Header Title!</h1>
-			</header>
 			<main>
 				<Suspense
 					fallback={<h2 className="text-white text-6xl">Loading posts...</h2>}
@@ -33,7 +29,18 @@ export default async function Blog() {
 						)
 					})}
 				</Suspense>
-				<h1 className="text-6xl text-white">its Main Title!</h1>
+				<div>
+					{recentPosts.map((post: Post) => {
+						return (
+							<section
+								key={post.id}
+								className="text-white"
+							>
+								<h2>{post.title}</h2>
+							</section>
+						)
+					})}
+				</div>
 			</main>
 		</div>
 	)

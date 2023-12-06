@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 import getPost from '@/app/_lib/getPost'
 import getPosts from '@/app/_lib/getPosts'
 import getPostComments from '@/app/_lib/getPostComments'
-import Navigation from '@/app/components/Navigation'
 import PostItem from './components/PostItem'
 import getUser from '@/app/_lib/getUser'
 
@@ -45,10 +44,13 @@ export default async function Post({
 	const comments = await commentsData
 
 	if (!post.id) notFound()
-
+	// ? cleanup code
+	// ! lib its route.js?
+	// ! formattedDate location in ???
+	// ! header and paralel
+	// ! css styles
 	return (
 		<div className="">
-			<Navigation />
 			<div className="container">
 				<Suspense
 					fallback={<h2 className="text-white text-6xl">Post is loading...</h2>}
