@@ -34,34 +34,28 @@ export default async function Post({
 }: {
 	params: { postId: string }
 }) {
-	const userData = getUser(postId)
-	const user = await userData
+	const postData: Promise<Post> = getPost(postId)
+	const post: Post = await postData
 
-	const postData = getPost(postId)
-	const post = await postData
-
-	const commentsData = getPostComments(postId)
-	const comments = await commentsData
+	const commentsData: Promise<PostComment[]> = getPostComments(postId)
+	const comments: PostComment[] = await commentsData
+	//@ts-ignore
+	const userData: Promise<User> = getUser(post.userId)
+	const user: User = await userData
 
 	if (!post.id) notFound()
-	// ? cleanup code
-	// ! lib its route.js?
-	// ! formattedDate location in ???
-	// ! header and paralel
-	// ! css styles
+
 	return (
 		<div className="">
-			<div className="container">
-				<Suspense
-					fallback={<h2 className="text-white text-6xl">Post is loading...</h2>}
-				>
-					<PostItem
-						promise={postData}
-						comments={comments}
-						user={user}
-					/>
-				</Suspense>
-			</div>
+			<Suspense
+				fallback={<h2 className="text-white text-6xl">Post is loading...</h2>}
+			>
+				<PostItem
+					postData={postData}
+					commentsData={commentsData}
+					userData={userData}
+				/>
+			</Suspense>
 		</div>
 	)
 }

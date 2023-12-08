@@ -9,39 +9,23 @@ export const metadata: Metadata = {
 }
 
 export default async function Blog() {
-	const postsData = getPosts()
-	const posts: Post[] = await postsData
-	const recentPosts: Post[] = posts.slice(-4)
+	const posts: Post[] = await getPosts()
 
 	return (
-		<div>
-			<main>
-				<Suspense
-					fallback={<h2 className="text-white text-6xl">Loading posts...</h2>}
-				>
-					{posts.map((post: Post) => {
-						return (
-							<section key={post.id}>
-								<h2>{post.title}</h2>
-								<p>{post.body}</p>
-								<Link href={`/blog/post/${post.id}`}>read more</Link>
-							</section>
-						)
-					})}
-				</Suspense>
-				<div>
-					{recentPosts.map((post: Post) => {
-						return (
-							<section
-								key={post.id}
-								className="text-white"
-							>
-								<h2>{post.title}</h2>
-							</section>
-						)
-					})}
-				</div>
-			</main>
-		</div>
+		<section className="">
+			<Suspense
+				fallback={<h2 className="text-white text-6xl">Loading posts...</h2>}
+			>
+				{posts.map((post: Post) => {
+					return (
+						<section key={post.id}>
+							<h2>{post.title}</h2>
+							<p>{post.body}</p>
+							<Link href={`/blog/post/${post.id}`}>read more</Link>
+						</section>
+					)
+				})}
+			</Suspense>
+		</section>
 	)
 }

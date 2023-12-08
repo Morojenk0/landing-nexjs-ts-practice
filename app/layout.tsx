@@ -3,7 +3,6 @@ import { Josefin_Sans } from 'next/font/google'
 import './globals.css'
 
 import Footer from './components/Footer'
-import Header from './components/Header'
 
 const josefinSans = Josefin_Sans({ subsets: ['latin'] })
 
@@ -17,26 +16,19 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
+	// ? cleanup code
+	// ! lib its route.js?
+	// ! formattedDate location in ???
+	// ! css styles
 	return (
 		<html
 			lang="en"
 			className="bg-black"
 		>
 			<body className={`${josefinSans.className}`}>
-				<Header />
 				{children}
 				<Footer />
 			</body>
 		</html>
 	)
 }
-
-;<body>
-	<header>
-		<nav></nav>
-		<div id="content"></div>
-	</header>
-	<main>
-		<div id="content"></div>
-	</main>
-</body>

@@ -7,7 +7,6 @@ export default async function getPost(postId: string) {
 
 	const rawData: Post = await res.json()
 	rawData.postTime = formattedDate()
-	console.log(rawData)
 
 	// const data = rawData.map((obj: Post) => {
 	// 	return {
