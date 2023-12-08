@@ -18,8 +18,6 @@ export default function RootLayout({
 }) {
 	// ? cleanup code
 	// ! lib its route.js?
-	// ! formattedDate location in ???
-	// ! css styles
 	return (
 		<html
 			lang="en"

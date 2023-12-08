@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { v4 as uuidv4 } from 'uuid'
-import getData from '@/app/_lib/getData'
+import getData from '@/lib/getData'
 
 import PlayButton from './components/PlayButton'
 import Navigation from './components/Navigation'
@@ -26,7 +26,6 @@ import iPhone12Mockup from '@/public/Gravity-Scene-iPhone-12-Mockup 1.png'
 
 export default async function Home() {
 	const db = getData()
-
 	const data = await db
 
 	return (

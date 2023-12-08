@@ -1,10 +1,10 @@
 import { Suspense } from 'react'
 import { notFound } from 'next/navigation'
-import getPost from '@/app/_lib/getPost'
-import getPosts from '@/app/_lib/getPosts'
-import getPostComments from '@/app/_lib/getPostComments'
-import PostItem from './components/PostItem'
-import getUser from '@/app/_lib/getUser'
+import getPost from '@/lib/getPost'
+import getPosts from '@/lib/getPosts'
+import getPostComments from '@/lib/getPostComments'
+import Post from './components/Post'
+import getUser from '@/lib/getUser'
 
 export async function generateMetadata({
 	params: { postId },
@@ -29,7 +29,7 @@ export async function generateStaticParams() {
 	}))
 }
 
-export default async function Post({
+export default async function PostContent({
 	params: { postId },
 }: {
 	params: { postId: string }
@@ -50,7 +50,7 @@ export default async function Post({
 			<Suspense
 				fallback={<h2 className="text-white text-6xl">Post is loading...</h2>}
 			>
-				<PostItem
+				<Post
 					postData={postData}
 					commentsData={commentsData}
 					userData={userData}
