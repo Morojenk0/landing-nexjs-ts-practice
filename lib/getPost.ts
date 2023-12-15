@@ -1,4 +1,4 @@
-import formattedDate from './getFormattedDate'
+import formattedDate from '@/utils/formattedDate'
 
 export default async function getPost(postId: string) {
 	const res = await fetch(
