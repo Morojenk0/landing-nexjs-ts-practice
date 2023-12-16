@@ -16,6 +16,8 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
+	// ? cleanup code
+	// ! lib its route.js?
 	return (
 		<html
 			lang="en"

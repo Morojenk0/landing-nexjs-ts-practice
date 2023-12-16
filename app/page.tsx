@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import getData from '@/lib/getData'
 import { v4 as uuidv4 } from 'uuid'
-import Navigation from './components/Navigation'
+import getData from '@/lib/getData'
+
 import PlayButton from './components/PlayButton'
+import Navigation from './components/Navigation'
 
 import googlePlay from '@/public/icons/google-play.svg'
 import appStore from '@/public/icons/app-store.svg'
@@ -25,13 +26,13 @@ import iPhone12Mockup from '@/public/Gravity-Scene-iPhone-12-Mockup 1.png'
 
 export default async function Home() {
 	const db = getData()
-
 	const data = await db
 
 	return (
-		<div>
+		<>
 			<header className="bg-hero-image bg-cover bg-center bg-no-repeat">
 				<Navigation />
+				{/* hero */}
 				<section className="">
 					<div
 						className="container pt-[8rem] pb-[8.4rem] flex flex-col items-center 
@@ -140,17 +141,17 @@ export default async function Home() {
 				>
 					<div
 						className="container pt-[3.75rem] pb-[5.75rem] 
-							tablet:pt-[7.5rem] tablet:pb-[10.12rem]
-							desktop:pt-[7.5rem] desktop:pb-[6.6rem]"
+						tablet:pt-[7.5rem] tablet:pb-[10.12rem]
+						desktop:pt-[7.5rem] desktop:pb-[6.6rem]"
 					>
 						<article
 							className="max-w-[18.75rem] mx-auto text-center
-								sm:max-w-[28.125rem]
-								xl:max-w-[37.5625rem]"
+							sm:max-w-[28.125rem]
+							xl:max-w-[37.5625rem]"
 						>
 							<h2
 								className="text-black text-2xl uppercase
-									tablet:text-3xl"
+								tablet:text-3xl"
 							>
 								About Our App
 							</h2>
@@ -175,19 +176,19 @@ export default async function Home() {
 						</article>
 						<div
 							className="mt-[2.5rem] flex flex-col gap-y-[2.5rem] items-center
-							tablet:mt-[3.75rem] tablet:flex-row tablet:gap-y-[0] tablet:justify-between"
+						tablet:mt-[3.75rem] tablet:flex-row tablet:gap-y-[0] tablet:justify-between"
 						>
 							<div>
 								<Image
 									className="max-w-[14.875rem] max-h-[22.4375rem]
-										lg:max-w-[24.125rem] lg:max-h-[34.25rem]"
+									lg:max-w-[24.125rem] lg:max-h-[34.25rem]"
 									src={mockup}
 									alt="mockup"
 								/>
 							</div>
 							<div
 								className="flex flex-col gap-y-[1.25rem]
-								lg:gap-y-[2.5rem]"
+							lg:gap-y-[2.5rem]"
 							>
 								{[
 									[
@@ -208,8 +209,8 @@ export default async function Home() {
 								].map(([title, text, textLarge]) => (
 									<article
 										className="max-w-[21.4375rem] pt-[1.13rem] pr-[2.06rem] pb-[.63rem] pl-[3.8rem] rounded-[.625rem] shadow-box-shadow
-											tablet:max-w-[24.4375rem]
-											lg:max-w-[35.625rem] lg:pt-[1.88rem] lg:pr-[1.25rem] lg:pb-[1.3rem] lg:pl-[3.7rem]"
+										tablet:max-w-[24.4375rem]
+										lg:max-w-[35.625rem] lg:pt-[1.88rem] lg:pr-[1.25rem] lg:pb-[1.3rem] lg:pl-[3.7rem]"
 										key={uuidv4()}
 									>
 										<h4 className="text-black text-xl uppercase relative before:absolute before:-ml-[2.5rem] before:content-[url('../public/icons/checkbox-circle-fill-black.svg')]">
@@ -217,7 +218,7 @@ export default async function Home() {
 										</h4>
 										<p
 											className="mt-[.19rem] text-gray text-base
-												lg:mt-[.75rem]"
+											lg:mt-[.75rem]"
 										>
 											<span className="lg:hidden">{text}</span>
 											<span className="hidden lg:block">{textLarge}</span>
@@ -235,12 +236,12 @@ export default async function Home() {
 				>
 					<div
 						className="container py-[3.75rem]
-						tablet:py-[7.5rem]"
+					tablet:py-[7.5rem]"
 					>
 						<article
 							className="mx-auto max-w-[18.75rem] text-center
-							tablet:max-w-[28.125rem]
-							lg:max-w-[37.5625rem]"
+						tablet:max-w-[28.125rem]
+						lg:max-w-[37.5625rem]"
 						>
 							<h2 className="text-white text-2xl uppercase">app features</h2>
 							<p className="mt-[1.12rem] text-white text-base">
@@ -266,7 +267,7 @@ export default async function Home() {
 						<section>
 							<div
 								className="mt-[2rem] flex flex-col justify-center items-center gap-y-[2.5rem]
-								tablet:mt-[3.75rem]"
+							tablet:mt-[3.75rem]"
 							>
 								<article className="max-w-max flex flex-col items-center justify-center text-center">
 									<Image
@@ -276,33 +277,33 @@ export default async function Home() {
 									></Image>
 									<h3
 										className="max-w-[15.25rem] mt-[1.8rem] text-white text-xl uppercase
-													tablet:max-w-[13.9375rem]
-										lg:max-w-[21.625rem] lg:mt-[1.38rem] lg:text-2xl"
+												tablet:max-w-[13.9375rem]
+									lg:max-w-[21.625rem] lg:mt-[1.38rem] lg:text-2xl"
 									>
 										Full free chat
 									</h3>
 									<p
 										className="mt-[1.13rem] max-w-[13.9375rem] text-white text-base
-												tablet:max-w-[13.9375rem]
-												lg:max-w-[18.5625rem]"
+											tablet:max-w-[13.9375rem]
+											lg:max-w-[18.5625rem]"
 									>
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 									</p>
 								</article>
 								<div
 									className="flex flex-col justify-center items-center gap-y-[3.75rem]
-									tablet:flex-row tablet:gap-y-[0rem] tablet:items-stretch tablet:gap-x-[1.13rem]
-									lg:gap-x-[3.75rem]"
+								tablet:flex-row tablet:gap-y-[0rem] tablet:items-stretch tablet:gap-x-[1.13rem]
+								lg:gap-x-[3.75rem]"
 								>
 									<div
 										className="flex flex-col gap-y-[2.5rem]
-										tablet:gap-y-[0] tablet:justify-between tablet:pt-[1.06rem] tablet:pb-[1.5rem]
-										lg:py-[3.8rem]"
+									tablet:gap-y-[0] tablet:justify-between tablet:pt-[1.06rem] tablet:pb-[1.5rem]
+									lg:py-[3.8rem]"
 									>
 										<article
 											className=" flex flex-col  justify-center text-center
-												tablet:items-end tablet:text-right
-												lg:max-w-[25rem]"
+											tablet:items-end tablet:text-right
+											lg:max-w-[25rem]"
 										>
 											<Image
 												className="mx-auto tablet:mx-0"
@@ -311,7 +312,7 @@ export default async function Home() {
 											></Image>
 											<h3
 												className=" mt-[1.8rem] text-white text-xl uppercase
-													 lg:text-2xl"
+												 lg:text-2xl"
 											>
 												unlimiter features
 											</h3>
@@ -321,7 +322,7 @@ export default async function Home() {
 										</article>
 										<article
 											className="flex flex-col justify-center text-center
-												tablet:items-end tablet:text-right"
+											tablet:items-end tablet:text-right"
 										>
 											<Image
 												className="mx-auto tablet:mx-0"
@@ -330,13 +331,13 @@ export default async function Home() {
 											></Image>
 											<h3
 												className=" mt-[1.8rem] text-white text-xl uppercase
-													lg:max-w-[18.5625rem] lg:mt-[1.38rem] lg:text-2xl"
+												lg:max-w-[18.5625rem] lg:mt-[1.38rem] lg:text-2xl"
 											>
 												awsome ui design
 											</h3>
 											<p
 												className="mt-[1.13rem]  text-white text-base
-													lg:max-w-[18.5625rem]"
+												lg:max-w-[18.5625rem]"
 											>
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 											</p>
@@ -345,55 +346,55 @@ export default async function Home() {
 									<div className="">
 										<Image
 											className="max-w-[13.375rem] max-h-[29.25rem] rounded-[2.5rem] shadow-[40px_40px_100px_0px_rgba(24,48,63,0.50)]
-												tablet:max-w-[13.175rem] tablet:max-h-[29.25rem] tablet:shadow-[10px_10px_100px_0px_rgba(24,48,63,0.50)]
-												lg:max-w-[23.4375rem] lg:max-h-[50.75rem] lg:shadow-[40px_40px_100px_0px_rgba(24,48,63,0.50)]"
+											tablet:max-w-[13.175rem] tablet:max-h-[29.25rem] tablet:shadow-[10px_10px_100px_0px_rgba(24,48,63,0.50)]
+											lg:max-w-[23.4375rem] lg:max-h-[50.75rem] lg:shadow-[40px_40px_100px_0px_rgba(24,48,63,0.50)]"
 											src={app}
 											alt="app"
 										></Image>
 									</div>
 									<div
 										className="flex flex-col gap-y-[2.5rem] 
-										tablet:gap-y-[0] tablet:justify-between tablet:pt-[1.06rem]
-										lg:py-[3.8rem]"
+									tablet:gap-y-[0] tablet:justify-between tablet:pt-[1.06rem]
+									lg:py-[3.8rem]"
 									>
 										<article
 											className=" flex flex-col items-center justify-center text-center
-											tablet:text-left tablet:items-start"
+										tablet:text-left tablet:items-start"
 										>
 											<Image
 												className="mx-auto
-													tablet:mx-0"
+												tablet:mx-0"
 												src={cellPhone}
 												alt="cellPhone"
 											></Image>
 											<h3
 												className="max-w-[12rem] mt-[1.8rem] text-white text-xl uppercase	
-													tablet:max-w-[14rem]
-										 			lg:max-w-[22rem] lg:mt-[1.38rem] lg:text-2xl"
+												tablet:max-w-[14rem]
+												 lg:max-w-[22rem] lg:mt-[1.38rem] lg:text-2xl"
 											>
 												iso & androind version
 											</h3>
 											<p
 												className="mt-[1.13rem] text-white text-base
-													lg:max-w-[18.5625rem]"
+												lg:max-w-[18.5625rem]"
 											>
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 											</p>
 										</article>
 										<article
 											className="flex flex-col items-center justify-center text-center
-											tablet:text-left tablet:items-start tablet:-mb-[.6rem] lg:-mb-0"
+										tablet:text-left tablet:items-start tablet:-mb-[.6rem] lg:-mb-0"
 										>
 											<Image
 												className="mx-auto
-													tablet:mx-0"
+												tablet:mx-0"
 												src={eyeScanner}
 												alt="eyeScanner"
 											></Image>
 											<h3
 												className="max-w-[9.9375rem] mt-[1.8rem] text-white text-xl uppercase
-													tablet:max-w-[14rem]
-												 lg:max-w-[22rem] lg:mt-[1.38rem] lg:text-2xl"
+												tablet:max-w-[14rem]
+											 lg:max-w-[22rem] lg:mt-[1.38rem] lg:text-2xl"
 											>
 												retina ready greaphics
 											</h3>
@@ -430,19 +431,19 @@ export default async function Home() {
 				>
 					<div
 						className="container items-center py-[3.75rem] flex flex-col gap-y-[3.75rem]
-					tablet:py-[7.5rem] tablet:flex-row tablet:justify-between tablet:gap-y-[0rem]
-					xl:py-[7.5rem]"
+				tablet:py-[7.5rem] tablet:flex-row tablet:justify-between tablet:gap-y-[0rem]
+				xl:py-[7.5rem]"
 					>
 						<div
 							className="max-w-[20.90513rem]
-						tablet:max-w-[20.25rem]
-						lg:max-w-[35.625rem]"
+					tablet:max-w-[20.25rem]
+					lg:max-w-[35.625rem]"
 						>
 							<article className="">
 								<h2
 									className="max-w-[18rem] text-black text-2xl uppercase
-									tablet:text-3xl
-									lg:max-w-full"
+								tablet:text-3xl
+								lg:max-w-full"
 								>
 									Download App Now
 								</h2>
@@ -463,7 +464,7 @@ export default async function Home() {
 							</article>
 							<div
 								className="mt-[2.5rem] flex flex-row justify-between
-							lg:justify-normal lg:gap-x-[1.56rem]"
+						lg:justify-normal lg:gap-x-[1.56rem]"
 							>
 								<a
 									href="https://store.google.com/regionpicker"
@@ -488,8 +489,8 @@ export default async function Home() {
 							</div>
 							<div
 								className="mt-[3.75rem] flex flex-row justify-between
-							tablet:mt-[2.5rem]
-							lg:mt-[3.75rem]"
+						tablet:mt-[2.5rem]
+						lg:mt-[3.75rem]"
 							>
 								{[
 									[download, data.raitings[0], 'Download'],
@@ -498,24 +499,24 @@ export default async function Home() {
 								].map(([image, data, category]) => (
 									<article
 										className="w-[6rem] py-[.75rem] flex flex-col items-center bg-blue rounded-[.3125rem]
-										lg:w-[10.625rem] lg:pt-[1.9rem] lg:pb-[1.25rem] lg:rounded-[.625rem]"
+									lg:w-[10.625rem] lg:pt-[1.9rem] lg:pb-[1.25rem] lg:rounded-[.625rem]"
 										key={uuidv4()}
 									>
 										<Image
 											className="w-[1.25rem] h-[1.25rem]
-											lg:w-[2.1875rem] lg:h-[2.1875rem]"
+										lg:w-[2.1875rem] lg:h-[2.1875rem]"
 											src={image}
 											alt={image}
 										></Image>
 										<h4
 											className="mt-[.5rem] text-white text-xl
-										lg:mt-[1.3rem] lg:text-2xl"
+									lg:mt-[1.3rem] lg:text-2xl"
 										>
 											{data}
 										</h4>
 										<p
 											className="text-white text-base 
-										lg:mt-[1.13rem] lg:text-xl lg:uppercase"
+									lg:mt-[1.13rem] lg:text-xl lg:uppercase"
 										>
 											{category}
 										</p>
@@ -525,13 +526,13 @@ export default async function Home() {
 						</div>
 						<div
 							className="flex
-						tablet:items-end"
+					tablet:items-end"
 						>
 							<Image
 								className="max-w-[20.905rem] max-h-[19.446rem]
-								tablet:-mb-[.4rem]
-								lg:max-w-[26.25rem] lg:max-h-[25rem]
-								xl:max-w-[32.25rem] xl:max-h-[30rem] lg:-mb-[.8rem]"
+							tablet:-mb-[.4rem]
+							lg:max-w-[26.25rem] lg:max-h-[25rem]
+							xl:max-w-[32.25rem] xl:max-h-[30rem] lg:-mb-[.8rem]"
 								src={iPhone12Mockup}
 								alt="iPhone12Mockup"
 							></Image>
@@ -542,20 +543,20 @@ export default async function Home() {
 				<section className="bg-blue bg-guide-image bg-cover bg-center bg-no-repeat">
 					<div
 						className="container relative pt-[3.75rem] pb-[7.25rem]
-					tablet:pt-[3.06rem] tablet:pb-[10.62rem]
-					xl:pt-[7.5rem] xl:pb-[13.5rem]"
+				tablet:pt-[3.06rem] tablet:pb-[10.62rem]
+				xl:pt-[7.5rem] xl:pb-[13.5rem]"
 					>
 						<article className="flex flex-col items-center justify-center text-center">
 							<h2
 								className="text-white text-2xl uppercase  
-								tablet:text-3xl"
+							tablet:text-3xl"
 							>
 								how to use the app perfectly
 							</h2>
 							<p
 								className="max-w-[18.75rem] mt-[1.12rem] text-white text-base
-								tablet:max-w-[28.125rem]
-								xl:max-w-[37.5625rem]"
+							tablet:max-w-[28.125rem]
+							xl:max-w-[37.5625rem]"
 							>
 								<span className="tablet:hidden">
 									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -585,20 +586,20 @@ export default async function Home() {
 				>
 					<div
 						className="container pt-[8.4rem] pb-[3.75rem]
-						tablet:pt-[15rem] tablet:pb-[7.5rem]
-						desktop:pt-[17.7rem]"
+					tablet:pt-[15rem] tablet:pb-[7.5rem]
+					desktop:pt-[17.7rem]"
 					>
 						<article className="flex flex-col items-center justify-center text-center">
 							<h2
 								className="text-black text-2xl uppercase  
-								tablet:text-3xl"
+							tablet:text-3xl"
 							>
 								Our reative team
 							</h2>
 							<p
 								className="max-w-[18.75rem] mt-[1.12rem] text-gray text-base
-								tablet:max-w-[28.125rem]
-								xl:max-w-[37.5625rem]"
+							tablet:max-w-[28.125rem]
+							xl:max-w-[37.5625rem]"
 							>
 								<span className="tablet:hidden">
 									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -620,14 +621,14 @@ export default async function Home() {
 						</article>
 						<section
 							className="mt-[2.5rem] 
-							tablet:mt-[2rem]
-							desktop:mt-[3.75rem]"
+						tablet:mt-[2rem]
+						desktop:mt-[3.75rem]"
 						>
 							<div
 								className="flex flex-col items-center justify-center gap-y-[1.9rem]
-									tablet:flex-row tablet:gap-y-[0] tablet:gap-x-[1.5rem]
-									desktop:gap-x-[1.8rem]
-								"
+								tablet:flex-row tablet:gap-y-[0] tablet:gap-x-[1.5rem]
+								desktop:gap-x-[1.8rem]
+							"
 							>
 								{[
 									[
@@ -657,20 +658,20 @@ export default async function Home() {
 								].map(([name, place, text, largeText, photo, link]: any) => (
 									<article
 										className="max-w-[21.4375rem] pt-[2.5rem] pb-[3.3rem] px-[1.1rem] flex flex-col items-center justify-center text-center bg-white rounded-[.625rem] shadow-[0px_1px_10px_0px_rgba(0,0,0,0.10)]
-										tablet:max-w-[13.3125rem] tablet:px-[.38rem] tablet:pb-[1.9rem]
-										lg:max-w-[23.125rem] lg:px-[1.1rem] lg:pb-[3.3rem] "
+									tablet:max-w-[13.3125rem] tablet:px-[.38rem] tablet:pb-[1.9rem]
+									lg:max-w-[23.125rem] lg:px-[1.1rem] lg:pb-[3.3rem] "
 										key={uuidv4()}
 									>
 										<div className="w-full">
 											<div
 												className="relative rounded-full before:content-[url('../public/shapes/avatar-border.svg')] before:absolute before:top-0 before:right-0 before:bottom-0 before:left-0 before:m-auto before:w-[13.75rem] before:h-[13.75rem]
-											tablet:before:content-[url('../public/shapes/avatar-border-tablet.svg')] tablet:before:w-[11.125rem] tablet:before:h-[11.125rem]
-											lg:before:content-[url('../public/shapes/avatar-border.svg')] lg:before:w-[13.75rem] lg:before:h-[13.75rem]"
+										tablet:before:content-[url('../public/shapes/avatar-border-tablet.svg')] tablet:before:w-[11.125rem] tablet:before:h-[11.125rem]
+										lg:before:content-[url('../public/shapes/avatar-border.svg')] lg:before:w-[13.75rem] lg:before:h-[13.75rem]"
 											>
 												<Image
 													className="mx-auto w-[12.375rem] h-[12.375rem] 
-													tablet:w-[10rem] tablet:h-[10rem]
-													lg:w-[12.375rem] lg:h-[12.375rem]"
+												tablet:w-[10rem] tablet:h-[10rem]
+												lg:w-[12.375rem] lg:h-[12.375rem]"
 													src={photo}
 													alt={photo}
 												></Image>
@@ -678,22 +679,22 @@ export default async function Home() {
 										</div>
 										<h3
 											className="mt-[4.4rem] text-black text-3xl uppercase
-											tablet:mt-[1.25rem] tablet:text-xl
-											desktop:mt-[4.4rem] desktop:text-3xl"
+										tablet:mt-[1.25rem] tablet:text-xl
+										desktop:mt-[4.4rem] desktop:text-3xl"
 										>
 											{name}
 										</h3>
 										<h4
 											className="text-gray text-xl uppercase
-											tablet:mt-[.56rem] tablet:text-base
-											desktop:mt-[0] desktop:text-xl"
+										tablet:mt-[.56rem] tablet:text-base
+										desktop:mt-[0] desktop:text-xl"
 										>
 											{place}
 										</h4>
 										<p
 											className="mt-[.9rem] text-gray text-base
-											tablet:mt-[1.3rem]
-											desktop:mt-[.9rem]"
+										tablet:mt-[1.3rem]
+										desktop:mt-[.9rem]"
 										>
 											<span className="hidden tablet:block desktop:hidden">
 												{text}
@@ -704,9 +705,9 @@ export default async function Home() {
 										</p>
 										<ul
 											className="mt-[2.5rem] flex flex-row gap-x-[1.9rem] items-center
-											tablet:mt-[1.9rem] tablet:gap-x-[.9rem]
-											desktop:mt-[2.5rem] desktop:gap-x-[1.9rem]
-											"
+										tablet:mt-[1.9rem] tablet:gap-x-[.9rem]
+										desktop:mt-[2.5rem] desktop:gap-x-[1.9rem]
+										"
 										>
 											<li>
 												<a
@@ -841,6 +842,6 @@ export default async function Home() {
 					</div>
 				</section>
 			</main>
-		</div>
+		</>
 	)
 }

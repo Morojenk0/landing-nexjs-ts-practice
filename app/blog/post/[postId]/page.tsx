@@ -3,16 +3,14 @@ import { notFound } from 'next/navigation'
 import getPost from '@/lib/getPost'
 import getPosts from '@/lib/getPosts'
 import getPostComments from '@/lib/getPostComments'
-import Navigation from '@/app/components/Navigation'
-import PostItem from './components/PostItem'
+import Post from './components/Post'
+import getUser from '@/lib/getUser'
 
-type Params = {
-	params: {
-		postId: string
-	}
-}
-
-export async function generateMetadata({ params: { postId } }: Params) {
+export async function generateMetadata({
+	params: { postId },
+}: {
+	params: { postId: string }
+}) {
 	const postData = getPost(postId)
 	const post = await postData
 
@@ -31,28 +29,33 @@ export async function generateStaticParams() {
 	}))
 }
 
-export default async function Post({ params: { postId } }: Params) {
-	const postData = getPost(postId)
-	const post = await postData
+export default async function PostContent({
+	params: { postId },
+}: {
+	params: { postId: string }
+}) {
+	const postData: Promise<Post> = getPost(postId)
+	const post: Post = await postData
 
-	const commentsData = getPostComments(postId)
-	const comments = await commentsData
+	const commentsData: Promise<PostComment[]> = getPostComments(postId)
+	const comments: PostComment[] = await commentsData
+	//@ts-ignore
+	const userData: Promise<User> = getUser(post.userId)
+	const user: User = await userData
 
 	if (!post.id) notFound()
 
 	return (
 		<div className="">
-			<Navigation />
-			<div className="container">
-				<Suspense
-					fallback={<h2 className="text-white text-6xl">Post is loading...</h2>}
-				>
-					<PostItem
-						promise={postData}
-						comments={comments}
-					/>
-				</Suspense>
-			</div>
+			<Suspense
+				fallback={<h2 className="text-white text-6xl">Post is loading...</h2>}
+			>
+				<Post
+					postData={postData}
+					commentsData={commentsData}
+					userData={userData}
+				/>
+			</Suspense>
 		</div>
 	)
 }

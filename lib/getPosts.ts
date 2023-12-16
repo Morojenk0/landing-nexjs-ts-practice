@@ -1,7 +1,16 @@
+import formattedDate from '@/utils/formattedDate'
+
 export default async function getPosts() {
 	const res = await fetch('https://jsonplaceholder.typicode.com/posts')
 
 	if (!res.ok) undefined
 
-	return res.json()
+	const rawData: Post[] = await res.json()
+	const data = rawData.map((obj: Post) => {
+		return {
+			...obj,
+			postTime: formattedDate(),
+		}
+	})
+	return data
 }
