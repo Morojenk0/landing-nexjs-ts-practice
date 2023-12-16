@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Blog() {
 	const posts: Post[] = await getPosts()
-	const temp = posts.filter((obj) => obj.id < 5)
+	const recentPosts: Post[] = posts.filter((obj) => obj.id < 5)
 
 	return (
 		<section className="">
@@ -19,7 +19,7 @@ export default async function Blog() {
 				<Suspense
 					fallback={<h2 className="text-black text-6xl">Loading posts...</h2>}
 				>
-					{temp.map((post: Post) => {
+					{recentPosts.map((post: Post) => {
 						return (
 							<section
 								className="max-w-[48.125rem]"
