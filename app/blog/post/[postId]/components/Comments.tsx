@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import Counter from './Counter'
+
 export default async function Comments({
 	commentsData,
 }: {
@@ -35,19 +38,39 @@ export default async function Comments({
 						placeholder="Enter commentary text"
 					></textarea>
 					<button
-						className="w-full px-[1.5rem] py-[.5rem] text-white text-xl uppercase bg-blue rounded-[.625rem] transition hover:bg-blue-800 active:bg-blue-600
+						className="w-full px-[1.5rem] py-[.5rem] text-white text-xl uppercase bg-blue rounded-[.625rem] transition hover:bg-blue/70 active:bg-blue/90
 						md:ml-auto md:max-w-max"
 						type="submit"
 					>
 						Submit
 					</button>
 				</form>
-				<section className="mt-[2rem]">
+				<section
+					className="mt-[2rem] flex flex-col gap-y-[.7rem]
+					md:gap-y-[2rem]"
+				>
 					{comments.map((comment: PostComment) => {
 						return (
-							<article key={comment.id}>
-								<h2 className="text-black uppercase">{comment.name}</h2>
-								<p>{comment.body}</p>
+							<article
+								className="flex flex-row gap-x-[1.25rem]"
+								key={comment.id}
+							>
+								<Image
+									className="max-w-[5rem] max-h-[5rem] rounded-[.625rem]"
+									src="https://picsum.photos/80/80"
+									alt="userAvatar"
+									width={10000}
+									height={10000}
+								></Image>
+								<div className="flex flex-col">
+									<h2 className="text-blue text-2xl uppercase">
+										{comment.name}
+									</h2>
+									<p className="mt-[.60rem] text-gray text-base">
+										{comment.body}
+									</p>
+									<Counter />
+								</div>
 							</article>
 						)
 					})}

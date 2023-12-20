@@ -6,9 +6,9 @@ export default async function getPosts() {
 	if (!res.ok) undefined
 
 	const rawData: Post[] = await res.json()
-	const data = rawData.map((obj: Post) => {
+	const data = rawData.map((post: Post) => {
 		return {
-			...obj,
+			...post,
 			postTime: formattedDate(),
 		}
 	})

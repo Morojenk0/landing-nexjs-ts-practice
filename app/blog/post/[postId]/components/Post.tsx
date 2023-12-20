@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Comments from './Comments'
 import { v4 as uuidv4 } from 'uuid'
 
-export default async function PostItem({
+export default async function Post({
 	postData,
 	commentsData,
 	userData,
@@ -284,7 +284,7 @@ export default async function PostItem({
 					</div>
 					<div className="ml-[1.12rem] pt-[1.12rem] flex flex-col">
 						<h4 className="text-black text-xl uppercase">{user.name}</h4>
-						<h5 className="mt-[.44rem] text-blue text-base">UI Desginer</h5>
+						<h5 className="mt-[.44rem] text-blue text-base">UI Designer</h5>
 						<p className="mt-[.56rem] text-gray text-base ">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor
 							porttitor est amet, volutpat augue a sodales nec, vitae. Pulvinar

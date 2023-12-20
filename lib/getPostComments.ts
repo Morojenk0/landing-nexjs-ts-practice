@@ -5,5 +5,13 @@ export default async function getPostComments(postId: string) {
 
 	if (!res.ok) undefined
 
-	return res.json()
+	const rawData: PostComment[] = await res.json()
+	const data = rawData.map((post: PostComment) => {
+		return {
+			...post,
+			likes: Math.floor(Math.random() * 6),
+		}
+	})
+
+	return data
 }
