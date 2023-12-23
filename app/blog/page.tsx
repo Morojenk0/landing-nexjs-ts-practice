@@ -3,23 +3,35 @@ import { Suspense } from 'react'
 import Link from 'next/link'
 import getPosts from '@/lib/getPosts'
 import Image from 'next/image'
+import { Query } from 'mongoose'
 
 export const metadata: Metadata = {
 	title: 'About | Appolly',
 	description: 'Page with users posts',
 }
 
-export default async function Blog() {
+export default async function Blog({
+	searchParams,
+}: {
+	searchParams?: { query: string; page: string }
+}) {
 	const posts: Post[] = await getPosts()
-	const recentPosts: Post[] = posts.filter((obj) => obj.id < 5)
+	// const recentPosts: Post[] = posts.filter((obj) => obj.id < 5)
+	// ? getPosts with Tags attribute. On search req filter posts[] with query = tags ?. Then render posts. same with post title
+	// ? 25 / 5 = 5
+	// page=1
+
+	const query = searchParams?.query || ''
+	const currentPage = Number(searchParams?.page) || 1
 
 	return (
 		<section className="">
 			<div className="flex flex-col gap-y-[1.75rem] xl:gap-y-[3.75rem]">
 				<Suspense
+					key={query + currentPage}
 					fallback={<h2 className="text-black text-6xl">Loading posts...</h2>}
 				>
-					{recentPosts.map((post: Post) => {
+					{posts.map((post: Post) => {
 						return (
 							<section
 								className="max-w-[48.125rem]"
