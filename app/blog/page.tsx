@@ -16,10 +16,6 @@ export default async function Blog({
 	searchParams?: { query: string; page: string }
 }) {
 	const posts: Post[] = await getPosts()
-	// const recentPosts: Post[] = posts.filter((obj) => obj.id < 5)
-	// ? getPosts with Tags attribute. On search req filter posts[] with query = tags ?. Then render posts. same with post title
-	// ? 25 / 5 = 5
-	// page=1
 
 	const query = searchParams?.query || ''
 	const currentPage = Number(searchParams?.page) || 1

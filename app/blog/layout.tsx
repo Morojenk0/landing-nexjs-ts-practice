@@ -6,14 +6,6 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	// ? Search
-	// ? Tags sort
-	// ? Pagination
-	// ? Breadcrumbs
-	// ? New comments
-	// ? News letter
-
-	// ? Components new folders? and _folderName?
 	return (
 		<>
 			<header className="pb-[4rem] bg-hero-image bg-cover bg-center bg-no-repeat">

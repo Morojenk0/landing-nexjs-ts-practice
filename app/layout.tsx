@@ -16,8 +16,18 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	// ? cleanup code
-	// ! lib its route.js?
+	// ? Search
+	// ? Tags sort
+	// ? Pagination
+	// ? Breadcrumbs
+	// ? New comments
+	// ? News letter
+
+	// ? Components new folders? and _folderName?
+	// const recentPosts: Post[] = posts.filter((obj) => obj.id < 5)
+	// ? getPosts with Tags attribute. On search req filter posts[] with query = tags ?. Then render posts. same with post title
+	// ? 25 / 5 = 5
+	// page=1
 	return (
 		<html
 			lang="en"

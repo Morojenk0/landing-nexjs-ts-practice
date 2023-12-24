@@ -5,6 +5,7 @@ type Post = {
 	title: string
 	body: string
 	postTime: string
+	tag: string
 }
 type User = {
 	id: number

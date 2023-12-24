@@ -1,4 +1,5 @@
 import formattedDate from '@/utils/formattedDate'
+import generateTags from '@/utils/generateTags'
 
 export default async function getPosts() {
 	const res = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -10,7 +11,9 @@ export default async function getPosts() {
 		return {
 			...post,
 			postTime: formattedDate(),
+			tag: generateTags(),
 		}
 	})
+
 	return data
 }
