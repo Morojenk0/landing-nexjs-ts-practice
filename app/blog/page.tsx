@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 import Link from 'next/link'
 import getPosts from '@/lib/getPosts'
 import Image from 'next/image'
-import { Query } from 'mongoose'
+import Posts from './components/Posts'
 
 export const metadata: Metadata = {
 	title: 'About | Appolly',
@@ -15,22 +15,35 @@ export default async function Blog({
 }: {
 	searchParams?: { query: string; page: string }
 }) {
+	// import data
 	const posts: Post[] = await getPosts()
 
+	// searchParams
 	const query = searchParams?.query || ''
 	const currentPage = Number(searchParams?.page) || 1
 
+	// searchFilter function
+	function searchFilter(array: Post[]): Post[] {
+		return array.filter(
+			(post: Post) =>
+				post.title.includes(query) ||
+				post.body.includes(query) ||
+				post.postTime.includes(query) ||
+				post.tag.includes(query)
+		)
+	}
+	const filteredPosts = searchFilter(posts)
+
 	return (
-		<section className="">
+		<section>
 			<div className="flex flex-col gap-y-[1.75rem] xl:gap-y-[3.75rem]">
 				<Suspense
-					key={query + currentPage}
 					fallback={<h2 className="text-black text-6xl">Loading posts...</h2>}
 				>
-					{posts.map((post: Post) => {
+					{filteredPosts.map((post: Post) => {
 						return (
 							<section
-								className="max-w-[48.125rem]"
+								className="max-w-[48.125rem] "
 								key={post.id}
 							>
 								<Image
@@ -63,6 +76,7 @@ export default async function Blog({
 						)
 					})}
 				</Suspense>
+				{/* <Posts posts={posts} /> */}
 			</div>
 		</section>
 	)

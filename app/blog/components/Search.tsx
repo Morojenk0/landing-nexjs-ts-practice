@@ -1,11 +1,12 @@
+// @ts-nocheck
 'use client'
-
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 
 export default function Search() {
 	const searchParams = useSearchParams()
 	const pathname = usePathname()
 	const { replace } = useRouter()
+	const query = searchParams.get('query')
 
 	function handleSearch(term: string) {
 		const params = new URLSearchParams(searchParams)

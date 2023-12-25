@@ -1,5 +1,6 @@
 // import { useSearchParams } from 'next/navigation'
-
+// const searchParams = useSearchParams()
+// const query = searchParams.get('query')
 import RecentPosts from './RecentPosts'
 import Search from './Search'
 import Tags from './Tags'
@@ -10,20 +11,16 @@ export default async function Aside({
 }: {
 	searchParams?: { query?: string; page?: string }
 }) {
-	// const searchParams = useSearchParams()
-	// const query = searchParams.get('query')
-
+	// import data
 	const posts = await getPosts()
+
+	// recent posts
+	const recentPosts = posts.slice(-5)
+
 	const tags = posts.map((obj) => {
 		const tags = [obj.tag]
 		return tags
 	})
-	// console.log(tags)
-
-	const recentPosts = posts.slice(-5)
-	const filteredPosts = posts.filter(() => 1 > 1)
-	// console.log(filteredPosts)
-	console.log(searchParams?.query)
 
 	return (
 		<aside className="hidden max-w-[23.125rem] xl:flex flex-col gap-y-[2.5rem]">
