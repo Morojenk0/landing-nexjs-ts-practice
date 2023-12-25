@@ -3,26 +3,22 @@ import { Suspense } from 'react'
 import Link from 'next/link'
 import getPosts from '@/lib/getPosts'
 import Image from 'next/image'
-import Posts from './components/Posts'
 
 export const metadata: Metadata = {
 	title: 'About | Appolly',
 	description: 'Page with users posts',
 }
-
 export default async function Blog({
 	searchParams,
 }: {
 	searchParams?: { query: string; page: string }
 }) {
-	// import data
-	const posts: Post[] = await getPosts()
+	const postsData: Promise<Post[]> = getPosts()
+	const posts: Post[] = await postsData
 
-	// searchParams
 	const query = searchParams?.query || ''
-	const currentPage = Number(searchParams?.page) || 1
+	// const currentPage = Number(searchParams?.page) || 1
 
-	// searchFilter function
 	function searchFilter(array: Post[]): Post[] {
 		return array.filter(
 			(post: Post) =>
@@ -32,7 +28,7 @@ export default async function Blog({
 				post.tag.includes(query)
 		)
 	}
-	const filteredPosts = searchFilter(posts)
+	const filteredPosts: Post[] = searchFilter(posts)
 
 	return (
 		<section>
@@ -76,7 +72,6 @@ export default async function Blog({
 						)
 					})}
 				</Suspense>
-				{/* <Posts posts={posts} /> */}
 			</div>
 		</section>
 	)

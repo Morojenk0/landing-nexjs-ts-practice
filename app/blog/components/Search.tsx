@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use client'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 
@@ -6,7 +5,6 @@ export default function Search() {
 	const searchParams = useSearchParams()
 	const pathname = usePathname()
 	const { replace } = useRouter()
-	const query = searchParams.get('query')
 
 	function handleSearch(term: string) {
 		const params = new URLSearchParams(searchParams)
@@ -55,7 +53,6 @@ export default function Search() {
 				onChange={(e) => {
 					handleSearch(e.target.value)
 				}}
-				// defaultValue={searchParams.get('query')?.toString()}
 			/>
 		</form>
 	)
