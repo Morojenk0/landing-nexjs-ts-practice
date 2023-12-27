@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import Link from 'next/link'
 import getPosts from '@/lib/getPosts'
 import Image from 'next/image'
+import Pagination from './components/Pagination'
 
 export const metadata: Metadata = {
 	title: 'About | Appolly',
@@ -73,6 +74,7 @@ export default async function Blog({
 					})}
 				</Suspense>
 			</div>
+			<Pagination posts={posts} />
 		</section>
 	)
 }
