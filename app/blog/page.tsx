@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
-import Link from 'next/link'
 import getPosts from '@/lib/getPosts'
-import Image from 'next/image'
 import Pagination from './components/Pagination'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
 	title: 'About | Appolly',
@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 export default async function Blog({
 	searchParams,
 }: {
-	searchParams?: { query: string; page: string }
+	searchParams?: { query?: string; page?: string }
 }) {
 	const postsData: Promise<Post[]> = getPosts()
 	const posts: Post[] = await postsData
 
 	const query = searchParams?.query || ''
-	// const currentPage = Number(searchParams?.page) || 1
+	const currentPage = Number(searchParams?.page) || 1
 
 	function searchFilter(array: Post[]): Post[] {
 		return array.filter(
@@ -29,7 +29,17 @@ export default async function Blog({
 				post.tag.includes(query)
 		)
 	}
-	const filteredPosts: Post[] = searchFilter(posts)
+
+	function paginatePosts(array: Post[]) {
+		const postsPerPage = Math.ceil(posts.length / 10)
+		const indexOfFirstPost = currentPage * postsPerPage - postsPerPage
+		const indexOfLastPost = indexOfFirstPost + postsPerPage
+		return array.slice(indexOfFirstPost, indexOfLastPost)
+	}
+
+	const currentPosts: Post[] = paginatePosts(posts)
+	const filteredPosts: Post[] = paginatePosts(searchFilter(posts))
+	console.log(filteredPosts)
 
 	return (
 		<section>
