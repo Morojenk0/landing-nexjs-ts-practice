@@ -2,7 +2,6 @@ import Image from 'next/image'
 import { v4 as uuidv4 } from 'uuid'
 import getData from '@/lib/getData'
 
-import PlayButton from './components/PlayButton'
 import Navigation from './components/Navigation'
 
 import googlePlay from '@/public/icons/google-play.svg'
@@ -576,7 +575,19 @@ export default async function Home() {
 								</span>
 							</p>
 						</article>
-						<PlayButton />
+						<div
+							className="absolute bg-[#000] w-full max-w-[21.4375rem] max-h-[9.375rem] right-0 left-0 bottom-0 -mb-[4.6rem] mx-auto rounded-[.625rem] overflow-hidden shadow-[0px_10px_100px_0px_rgba(0,0,0,0.24)]
+    					tablet:-mb-[7.2rem] tablet:max-w-[35.625rem] tablet:max-h-[14.4375rem]
+    					xl:-mb-[9.9rem] xl:max-w-[48.125rem] xl:max-h-[19.9375rem]"
+						>
+							<video
+								className="w-full xl:max-w-[48.125rem] xl:max-h-[19.9375rem]"
+								src="/video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4"
+								poster="/poster.png"
+								id="video"
+								controls
+							></video>
+						</div>
 					</div>
 				</section>
 				{/* team */}

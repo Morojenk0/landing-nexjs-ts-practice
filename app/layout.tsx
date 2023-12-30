@@ -16,8 +16,13 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	// ? cleanup code
-	// ! lib its route.js?
+	// ? Tags sort
+	// ? Pagination
+	// ? Breadcrumbs
+	// ? New comments
+	// ? News letter
+
+	// ? Components new folders? and _folderName?
 	return (
 		<html
 			lang="en"

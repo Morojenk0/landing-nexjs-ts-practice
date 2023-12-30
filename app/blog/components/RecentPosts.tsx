@@ -2,7 +2,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default async function RecentPosts({ recentPosts }) {
+export default async function RecentPosts({
+	recentPosts,
+}: {
+	recentPosts: Post[]
+}) {
 	return (
 		<section>
 			<h2 className="text-black text-3xl uppercase">recent posts</h2>

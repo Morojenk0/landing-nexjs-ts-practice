@@ -1,28 +1,56 @@
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
-import Link from 'next/link'
 import getPosts from '@/lib/getPosts'
+import Pagination from './components/Pagination'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
 	title: 'About | Appolly',
 	description: 'Page with users posts',
 }
+export default async function Blog({
+	searchParams,
+}: {
+	searchParams?: { query?: string; page?: string }
+}) {
+	const postsData: Promise<Post[]> = getPosts()
+	const posts: Post[] = await postsData
 
-export default async function Blog() {
-	const posts: Post[] = await getPosts()
-	const temp = posts.filter((obj) => obj.id < 5)
+	const query = searchParams?.query || ''
+	const currentPage = Number(searchParams?.page) || 1
+
+	function searchFilter(array: Post[]): Post[] {
+		return array.filter(
+			(post: Post) =>
+				post.title.includes(query) ||
+				post.body.includes(query) ||
+				post.postTime.includes(query) ||
+				post.tag.includes(query)
+		)
+	}
+
+	function paginatePosts(array: Post[]) {
+		const postsPerPage = Math.ceil(posts.length / 10)
+		const indexOfFirstPost = currentPage * postsPerPage - postsPerPage
+		const indexOfLastPost = indexOfFirstPost + postsPerPage
+		return array.slice(indexOfFirstPost, indexOfLastPost)
+	}
+
+	const currentPosts: Post[] = paginatePosts(posts)
+	const filteredPosts: Post[] = paginatePosts(searchFilter(posts))
+	console.log(filteredPosts)
 
 	return (
-		<section className="">
+		<section>
 			<div className="flex flex-col gap-y-[1.75rem] xl:gap-y-[3.75rem]">
 				<Suspense
 					fallback={<h2 className="text-black text-6xl">Loading posts...</h2>}
 				>
-					{temp.map((post: Post) => {
+					{filteredPosts.map((post: Post) => {
 						return (
 							<section
-								className="max-w-[48.125rem]"
+								className="max-w-[48.125rem] "
 								key={post.id}
 							>
 								<Image
@@ -56,6 +84,7 @@ export default async function Blog() {
 					})}
 				</Suspense>
 			</div>
+			<Pagination posts={posts} />
 		</section>
 	)
 }
