@@ -3,13 +3,15 @@ import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 
 export default function Search() {
 	const searchParams = useSearchParams()
+	const params = new URLSearchParams(searchParams)
+
 	const pathname = usePathname()
 	const { replace } = useRouter()
 
 	function handleSearch(term: string) {
-		const params = new URLSearchParams(searchParams)
 		if (term) {
 			params.set('query', term)
+			params.set('page', '1')
 		} else {
 			params.delete('query')
 		}
