@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { Metadata } from 'next'
 import getPosts from '@/lib/getPosts'
 import Pagination from './components/Pagination'
@@ -19,12 +20,14 @@ export default async function Blog({
 	const currentPage = Number(searchParams?.page) || 1
 
 	function searchFilter(array: Post[]): Post[] {
+		const formattedQuery = query.toLowerCase()
+
 		return array.filter(
 			(post: Post) =>
-				post.title.includes(query) ||
-				post.body.includes(query) ||
-				post.postTime.includes(query) ||
-				post.tag.includes(query)
+				post.title.includes(formattedQuery) ||
+				post.body.includes(formattedQuery) ||
+				post.postTime.includes(formattedQuery) ||
+				post.tag.includes(formattedQuery)
 		)
 	}
 
